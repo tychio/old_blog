@@ -3,15 +3,15 @@
 /*font*/
 @font-face{
     font-family: "aviel";
-    src: url(../font/Aviel.ttf) format("truetype");
+    src: url(/font/Aviel.ttf) format("truetype");
 };
 @font-face{
     font-family: "AF TOMMY HILFIGER";
-    src: url(../font/AFTOM__.TTF) format("truetype");
+    src: url(/font/AFTOM__.TTF) format("truetype");
 };
 @font-face{
     font-family: "monaco";
-    src: url(../font/monaco.ttf.ttf) format("truetype");
+    src: url(/font/monaco.ttf.ttf) format("truetype");
 };
 /*clearfix*/
 .clearfix:after{
@@ -31,7 +31,7 @@ body, html{ height: 100%; width: 100%; padding: 0; margin: 0; }
 a, a:link, a:visited{ color: #AA9999; text-decoration: none; }
 a:hover{ color: #CCBBBB; }
 /* LAYOUT */
-body{ background: #333 url(../img/bg.png) repeat; font-family: "aviel", "微软雅黑", arial; font-size: 16px; }
+body{ background: #333 url(/img/bg.png) repeat; font-family: "aviel", "微软雅黑", arial; font-size: 16px; }
 /* =header*/
 header{ position: fixed; z-index: 10000; top: 0; left: 0; height: 40px; width: 100%; background: #090404; font-family: "AF TOMMY HILFIGER", arial;
     -webkit-box-shadow: 0 0 5px #000;
@@ -39,7 +39,7 @@ header{ position: fixed; z-index: 10000; top: 0; left: 0; height: 40px; width: 1
         -ms-box-shadow: 0 0 5px #000;
          -o-box-shadow: 0 0 5px #000;
             box-shadow: 0 0 5px #000; }
-header div#top{ width: 1080px; }
+header div#top{ position: relative; width: 1080px; }
 header div#top a,
 header div#top a:link,
 header div#top a:visited{ color: #700000; }
@@ -47,7 +47,7 @@ header div#top a:hover{ color: #A03030; }
 /* ==title*/
 header div#top h1{ display: inline-block; line-height: 30px; margin: 10px 2px 0 2px; font-size: 24px; }
 /* ==nav*/
-header div#top nav{ float: right; margin: 2px; }
+header div#top nav{ position: absolute; top: 0; right: 0; margin: 2px; }
 header div#top nav a{ padding-bottom: 15px; line-height: 20px; margin: 0 5px; }
 /* =section*/
 section{ position: relative; overflow: hidden; top: 40px; left: 0; width: 1080px; background: #201010; opacity: 0.8; filter: alpha(opacity=80);
