@@ -1,20 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>{{ page.title }}</title>
-
-  </head>
-  <body>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
     <header>
-      <h1><a href="/">Tychio's Blog</a></h1>
+        <div id="top">
+            <a href="/"><h1>Tychio's Blog</h1></a>
+            <nav>
+                <a href="https://twitter.com/tychio">Twitter</a>
+                <a href="http://www.facebook.com/zzztychio">Facebook</a>
+                <a href="https://github.com/tychio">Github</a>
+            </nav>
+        </div>
     </header>
-    <section>
-      {{ content }}
+    <section>{{ content }}
     </section>
-    <footer>
-      <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a></p>
-    </footer>
-  </body>
+    <footer></footer>
+</body>
 </html>
