@@ -35,7 +35,7 @@ body, html{ height: 100%; width: 100%; padding: 0; margin: 0; }
 a, a:link, a:visited{ color: #AA9999; text-decoration: none; }
 a:hover{ color: #CCBBBB; }
 /* LAYOUT */
-body{ background: #999 url(bg.png) repeat; font-family: "aviel", "微软雅黑", arial; font-size: 16px; }
+body{ background: #999 url(/img/bg.png) repeat; font-family: "aviel", "微软雅黑", arial; font-size: 16px; }
 /* =header*/
 header{ position: fixed; z-index: 10000; top: 0; left: 0; height: 40px; width: 100%; background: #1F1C1C; font-family: "AF TOMMY HILFIGER", arial;
     -webkit-box-shadow: 0 0 5px #000;
