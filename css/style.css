@@ -7,15 +7,15 @@
 /*font*/
 @font-face{
     font-family: "aviel";
-    src: url(../font/Aviel.ttf) format("truetype");
+    src: url(/font/Aviel.ttf) format("truetype");
 };
 @font-face{
     font-family: "AF TOMMY HILFIGER";
-    src: url(../font/AFTOM__.TTF) format("truetype");
+    src: url(/font/AFTOM__.TTF) format("truetype");
 };
 @font-face{
     font-family: "monaco";
-    src: url(../font/monaco.ttf.ttf) format("truetype");
+    src: url(/font/monaco.ttf.ttf) format("truetype");
 };
 /*clearfix*/
 .clearfix:after{
@@ -73,7 +73,7 @@ section dl dd a h4{ overflow: hidden; padding: 5px 40px 5px 0; margin: 0; line-h
             transition: padding 0.3s; }
 section dl dd a:hover h4{ padding-right: 5px; }
 /* ==article*/
-section dl dd article{ text-align: left; font-size: 14px; line-height: 30px; font-family: "微软雅黑", arial; letter-spacing: 1px; }
+section dl dd article{ overflow: hidden; text-align: left; font-size: 14px; line-height: 30px; font-family: "微软雅黑", arial; letter-spacing: 1px; word-wrap: break-word;}
 section dl dd article time{ padding: 0 5px; text-align: right; line-height: 30px; font-size: 16px; }
 section dl dd article img{ float: left; margin: 10px 20px 0 0; max-width: 100%; }
 section dl dd article p{ padding: 5px; margin: 0; text-indent: 28px; }
