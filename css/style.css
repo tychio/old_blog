@@ -49,12 +49,12 @@ header div#top a:link,
 header div#top a:visited{ color: #902020; }
 header div#top a:hover{ color: #A03030; }
 /* ==title*/
-header div#top h1{ display: inline-block; line-height: 20px; margin: 20px 2px 0 0; font-size: 24px; }
+header div#top h1{ display: inline-block; line-height: 20px; margin: 16px 2px 0 0; font-size: 24px; }
 /* ==nav*/
 header div#top nav{ position: absolute; top: 0; right: 0; margin: 0 2px; }
 header div#top nav a{ padding-bottom: 20px; line-height: 20px; margin: 0 5px; }
 /* =section*/
-section{ position: relative; overflow: hidden; top: 40px; left: 0; width: 1080px; background: #392020; opacity: 0.8; filter: alpha(opacity=80);
+section{ position: relative; overflow: hidden; top: 0; left: 0; width: 1080px; padding: 40px 0; background: #392020; opacity: 0.8; filter: alpha(opacity=80);
     -webkit-box-shadow: 0 0 5px #000;
        -moz-box-shadow: 0 0 5px #000;
         -ms-box-shadow: 0 0 5px #000;
@@ -83,3 +83,5 @@ section dl dd article a:visited{ color: #A00000; text-decoration: underline; }
 section dl dd article a:hover{ color: #F03030; }
 section dl dd article pre{ padding: 10px 20px; line-height: 20px; background: #220000; }
 section dl dd article pre code{ font-family: "monaco", arial; }
+/* =footer*/
+footer{ position: relative; left: 0; bottom: 0; height: 40px; width: 1080px; }
