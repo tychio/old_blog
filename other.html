@@ -6,8 +6,7 @@ title: Tychio's Blog
 <dl>
     <dt>List</dt>
 {% for post in site.posts %}
-{{ post.category }}
-{% if "other" == post.category %}
+{% if "Other" == post.category %}
     <dd>
         <a href="{{ post.url }}">
             <time>{{ post.date | date_to_string }}</time>
