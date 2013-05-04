@@ -18,8 +18,45 @@
     </header>
     <section>{{ content }}
     </section>
-    <footer></footer>
+    <footer>
+        <a href="#" id="backtop">&#94;</a>
+    </footer>
     <script>
+      //backtop
+      (function () {
+        function scrollTop (p_top) {
+          var body = document.body;
+          if (typeof body.scrollTop == 'undefined' || body.scrollTop == 0) {
+            body = document.documentElement;
+          }
+          if (p_top && !isNaN(p_top - 0)) {
+            body.scrollTop = p_top;
+          } else {
+            return body.scrollTop;
+          }
+        }
+        var backtop = document.getElementById('backtop');
+        var interval = 0;
+        window.onscroll = function () {
+          var _top = scrollTop();
+          if (_top > 400) {
+            backtop.style.display = 'block';
+          } else {
+            backtop.style.display = 'none';
+          }
+        };
+        backtop.onclick = function (p_event) {
+          interval = setInterval(function () {
+            var _top = scrollTop();
+            scrollTop(_top - 300);
+            if (_top <= 0) {
+              scrollTop(0);
+              clearInterval(interval);
+            }
+          }, 50);
+          p_event.preventDefault ? p_event.preventDefault() : event.returnValue = false;
+        };
+      })();
       //ga
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
