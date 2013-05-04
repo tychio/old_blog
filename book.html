@@ -1,0 +1,18 @@
+---
+layout: default
+title: Tychio's Blog
+---
+
+<dl>
+    <dt>Book</dt>
+{% for post in site.posts %}
+{% if "Book" == post.category %}
+    <dd>
+        <a href="{{ post.url }}">
+            <time>{{ post.date | date_to_string }}</time>
+            <h4>{{ post.title }}</h4>
+        </a>
+    </dd>
+{% endif %}
+{% endfor %}
+</dl>
