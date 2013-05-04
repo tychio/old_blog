@@ -54,7 +54,7 @@ header div#top h1{ display: inline-block; line-height: 20px; margin: 16px 2px 0 
 header div#top nav{ position: absolute; top: 0; right: 0; margin: 0 2px; }
 header div#top nav a{ padding-bottom: 20px; line-height: 20px; margin: 0 5px; }
 /* =section*/
-section{ position: relative; overflow: hidden; top: 0; left: 0; height: 100%; width: 1080px; padding: 40px 0; background: #392020; opacity: 0.8; filter: alpha(opacity=80);
+section{ position: relative; overflow: hidden; top: 0; left: 0; min-height: 100%; width: 1080px; padding: 40px 0; background: #392020; opacity: 0.8; filter: alpha(opacity=80);
     -webkit-box-shadow: 0 0 5px #000;
        -moz-box-shadow: 0 0 5px #000;
         -ms-box-shadow: 0 0 5px #000;
