@@ -11,7 +11,7 @@
 };
 @font-face{
     font-family: "AF TOMMY HILFIGER";
-    src: url(/font/AFTOM__.TTF) format("truetype");
+    src: url(/font/AFTOM.TTF) format("truetype");
 };
 @font-face{
     font-family: "monaco";
@@ -43,7 +43,7 @@ header{ position: fixed; z-index: 10000; top: 0; left: 0; height: 40px; width: 1
         -ms-box-shadow: 0 0 5px #000;
          -o-box-shadow: 0 0 5px #000;
             box-shadow: 0 0 5px #000; }
-header div#top{ position: relative; width: 1080px; }
+header div#top{ position: relative; min-width: 1080px; width: 80%; }
 header div#top a,
 header div#top a:link,
 header div#top a:visited{ color: #902020; }
@@ -54,7 +54,7 @@ header div#top h1{ display: inline-block; line-height: 20px; margin: 16px 2px 0 
 header div#top nav{ position: absolute; top: 0; right: 0; margin: 0 2px; }
 header div#top nav a{ padding-bottom: 20px; line-height: 20px; margin: 0 5px; }
 /* =section*/
-section{ position: relative; overflow: hidden; top: 0; left: 0; min-height: 100%; width: 1080px; padding: 40px 0; background: #392020; opacity: 0.8; filter: alpha(opacity=80);
+section{ position: relative; overflow: hidden; top: 0; left: 0; min-height: 100%; min-width: 1080px; width: 80%; padding: 40px 0; background: #392020; opacity: 0.8; filter: alpha(opacity=80);
     -webkit-box-shadow: 0 0 5px #000;
        -moz-box-shadow: 0 0 5px #000;
         -ms-box-shadow: 0 0 5px #000;
@@ -84,5 +84,25 @@ section dl dd article a:hover{ color: #F03030; }
 section dl dd article pre{ overflow: auto; max-height: 500px; padding: 10px 20px; line-height: 20px; background: #220000; }
 section dl dd article pre code{ font-family: "monaco", arial; }
 /* =footer*/
-footer{ position: relative; left: 0; bottom: 40px; height: 40px; width: 1080px; }
+footer{ position: relative; left: 0; bottom: 40px; height: 40px; min-width: 1080px; width: 80%; }
 footer a#backtop{ display: none; float: left; position: fixed; z-index: 1001; right: 10px; bottom: 100px; height: 30px; width: 60px; line-height: 45px; text-align: center; font-size: 24px; background: #1F1C1C; }
+
+/* responsive */
+@media all and (min-width: 1025px) and (max-width: 1280px) {
+    header div#top,
+    section, footer{ min-width: 840px; width: 85%; }
+    section dl dd{ margin-left: 180px; }
+}
+@media all and (min-width: 641px) and (max-width: 1024px) {
+    header div#top,
+    section, footer{ min-width: 540px; }
+    section dl dd{ margin-left: 80px; }
+}
+@media all and (max-width: 900px) {
+    header div#top nav a{ margin: 0; font-size: 12px; }
+    section dl dd a h4{ font-weight: bold; }
+}
+@media all and (min-width: 321px) and (max-width: 640px) {
+    section dl dd article{ line-height: 36px; }
+    header{ padding: 20px 0; }
+}
