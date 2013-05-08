@@ -11,11 +11,11 @@
 };
 @font-face{
     font-family: "AF TOMMY HILFIGER";
-    src: url(/font/AFTOM.TTF) format("truetype");
+    src: url(/font/AFTOM.ttf) format("truetype");
 };
 @font-face{
     font-family: "monaco";
-    src: url(/font/monaco.ttf.ttf) format("truetype");
+    src: url(/font/monaco.ttf) format("truetype");
 };
 /*clearfix*/
 .clearfix:after{
