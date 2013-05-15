@@ -83,7 +83,7 @@ section dl dd article a:visited{ color: #A00000; text-decoration: underline; }
 section dl dd article a:hover{ color: #F03030; }
 section dl dd article pre{ overflow: auto; max-height: 500px; padding: 10px 20px; line-height: 20px; background: #220000; }
 section dl dd article pre code{ font-family: "monaco", arial; }
-section dl dd div.comments{ margin-top: 30px; border-top: 2px solid #AA9999; }
+section dl dd div.comments{ padding-top: 20px; margin-top: 30px; border-top: 2px solid #AA9999; }
 /* =footer*/
 footer{ position: relative; left: 0; bottom: 40px; height: 40px; min-width: 1080px; width: 80%; }
 footer a#backtop{ display: none; float: left; position: fixed; z-index: 1001; right: 10px; bottom: 100px; height: 30px; width: 60px; line-height: 45px; text-align: center; font-size: 24px; background: #1F1C1C; }
