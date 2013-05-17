@@ -1,10 +1,16 @@
-<?xml version="1.0" encoding="utf-8">
+<?xml version="1.0" encoding="utf-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
+        <title>Tychio's Blog</title>
+        <description>Front-end development and UI design</description>
+        <link>http://www.tychio.net</link>
+        {% for post in site.posts %}
         <item>
-            <title>Tychio's Blog</title>
-            <description>Front-end development and UI design</description>
-            <link>http://www.tychio.net</link>
+            <title>{{ post.title }}</title>
+            <link>{{ post.url }}</link>
+            <description>{{ post.excerpt }}</description>
+            <category>{{ post.category }}</category>
         </item>
+        {% endfor %}
     </channel>
 </rss>
