@@ -1,16 +1,27 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <title>Tychio's Blog</title>
-        <description>Front-end development and UI design</description>
-        <link>http://www.tychio.net</link>
-        {% for post in site.posts %}
-        <item>
-            <title>{{ post.title }}</title>
-            <link>{{ post.url }}</link>
-            <description>{{ post.excerpt }}</description>
-            <category>{{ post.category }}</category>
-        </item>
-        {% endfor %}
-    </channel>
-</rss>
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Tychio's Blog</title>
+ <link href="http://www.tychio.net/atom.xml" rel="self"/>
+ <link href="http://www.tychio.net/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>http://www.tychio.net/</id>
+ <author>
+   <name>Tyrant Zhang</name>
+   <email>z@zzz.gs</email>
+ </author>
+
+ {% for post in site.posts %}
+ <entry>
+   <title>{{ post.title }}</title>
+   <link href="http://www.tychio.net{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>http://www.tychio.net{{ post.id }}</id>
+   <content type="html">{{ post.excerpt }}</content>
+ </entry>
+ {% endfor %}
+ 
+</feed>
