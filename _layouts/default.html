@@ -25,8 +25,18 @@
         <a href="#" id="backtop">&#94;</a>
     </footer>
     <script>
-      //backtop
       (function () {
+        //nav
+        var list = document.getElementById('list');
+        list.onclick = function () {
+          var _nav = document.getElementsByTagName('nav')[0];
+          if (_nav.style.height == 0) {
+            _nav.style.height = 'auto';
+          } else {
+            _nav.style.height = 0;
+          }
+        };
+        //backtop
         function scrollTop (p_top) {
           var body = document.body;
           if (typeof body.scrollTop == 'undefined' || body.scrollTop == 0) {
