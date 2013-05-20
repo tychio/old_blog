@@ -43,7 +43,7 @@ header{ position: fixed; z-index: 10000; top: 0; left: 0; width: 100%; backgroun
         -ms-box-shadow: 0 0 5px #000;
          -o-box-shadow: 0 0 5px #000;
             box-shadow: 0 0 5px #000; }
-header div#top{ height: 40px; min-width: 1080px; width: 80%; }
+header div#top{ position: relative; height: 40px; min-width: 1080px; width: 80%; }
 header div#top a,
 header div#top a:link,
 header div#top a:visited{ color: #902020; }
@@ -110,6 +110,7 @@ footer a#backtop{ display: none; float: left; position: fixed; z-index: 1001; ri
     section dl dd a h4{ font-weight: bold; }
 }
 @media all and (max-width: 640px) {
+    header div#top{ position: static; }
     header div#top nav{ overflow: hidden; position: static; height: 0; width: 100%; margin: 0; background: #1F1C1C; }
     header div#top nav a{ display: block; height: 40px; line-height: 40px; padding: 0; }
     header div#top nav a:hover{ background: #999; }
