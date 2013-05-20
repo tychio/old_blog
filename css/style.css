@@ -116,6 +116,7 @@ footer a#backtop{ display: none; float: left; position: fixed; z-index: 1001; ri
     header div#top nav a:hover{ background: #999; }
     header div#top a#list{ display: block; position: absolute; right: 10px; top: 0; height: 40px; width: 40px; background: url(../img/list.png) no-repeat center center; opacity: 0.8; }
     header div#top a#list:hover{ opacity: 1; }
+    section, footer{ min-width: 480px; }
     section dl dt{ padding-bottom: 20px; }
     section dl dd{ margin-left: 10px; }
     section dl dd a h4{ font-weight: bold; padding: 20px; }
