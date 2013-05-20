@@ -37,13 +37,13 @@ a:hover{ color: #CCBBBB; }
 /* LAYOUT */
 body{ background: #333 url(/img/bg.png) repeat; font-family: "aviel", "微软雅黑", arial; font-size: 16px; }
 /* =header*/
-header{ position: fixed; z-index: 10000; top: 0; left: 0; height: 40px; width: 100%; background: #1F1C1C; font-family: "AF TOMMY HILFIGER", arial;
+header{ position: fixed; z-index: 10000; top: 0; left: 0; width: 100%; background: #1F1C1C; font-family: "AF TOMMY HILFIGER", arial;
     -webkit-box-shadow: 0 0 5px #000;
        -moz-box-shadow: 0 0 5px #000;
         -ms-box-shadow: 0 0 5px #000;
          -o-box-shadow: 0 0 5px #000;
             box-shadow: 0 0 5px #000; }
-header div#top{ position: relative; min-width: 1080px; width: 80%; }
+header div#top{ height: 40px; min-width: 1080px; width: 80%; }
 header div#top a,
 header div#top a:link,
 header div#top a:visited{ color: #902020; }
@@ -119,8 +119,9 @@ footer a#backtop{ display: none; float: left; position: fixed; z-index: 1001; ri
     section, footer{ min-width: 480px; }
     section dl dd{ margin-left: 10px; }
     section dl dd a h4{ font-size: 20px; }
+    section dl dd a time{ display: none; }
     section dl dd article{ line-height: 30px; font-size: 12px; }
-    section dl dd article time{ padding: 10px; font-size: 12px; }
+    section dl dd article time{ padding: 10px; font-size: 16px; }
 }
 @media all and (max-width: 320px) {
     header div#top,
