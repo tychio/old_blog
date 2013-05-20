@@ -111,10 +111,10 @@ footer a#backtop{ display: none; float: left; position: fixed; z-index: 1001; ri
 }
 @media all and (max-width: 640px) {
     header{ padding: 20px 0; }
-    header div#top nav{ overflow: hidden; top: 60px; height: 0; width: 100%; background: #1F1C1C; }
+    header div#top nav{ overflow: hidden; position: static; height: 0; width: 100%; background: #1F1C1C; }
     header div#top nav a{ display: block; height: 80px; line-height: 100px; }
     header div#top nav a:hover{ background: #999; }
-    header div#top a#list{ display: block; float: right; height: 20px; line-height: 20px; font-weight: bold; width: 40px; margin: 2px 10px; border-top: 5px solid #AA9999; border-bottom: 5px solid #AA9999; color: #AA9999; }
+    header div#top a#list{ display: block; float: right; height: 40px; width: 40px; margin: 0 10px; background: url(../img/list.png) no-repeat center center; }
     header div#top a#list:hover{ background: #666; }
     section dl dt{ padding-bottom: 20px; }
     section dl dd{ margin-left: 10px; }
