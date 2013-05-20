@@ -124,3 +124,7 @@ footer a#backtop{ display: none; float: left; position: fixed; z-index: 1001; ri
     section dl dd article{ line-height: 42px; font-size: 12px; }
     section dl dd article time{ padding: 10px; }
 }
+@media all and (max-width: 320px) {
+    header div#top,
+    section, footer{ min-width: 240px; }
+}
