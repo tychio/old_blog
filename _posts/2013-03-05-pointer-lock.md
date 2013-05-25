@@ -20,6 +20,7 @@ category: Tech
 以下是一个简单的Demo：
 
 ```javascript
+
 (function ($, undefined) {
     var mouse = {
         x: -1,
