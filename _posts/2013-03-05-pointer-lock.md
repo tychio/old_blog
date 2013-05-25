@@ -19,8 +19,6 @@ category: Tech
 
 以下是一个简单的Demo：
 
-```javascript
-
     (function ($, undefined) {
         var mouse = {
             x: -1,
@@ -95,7 +93,5 @@ category: Tech
             _ctx.fillRect(0, 0, _x, _y);
         }
     })(jQuery);
-
-```
 
 [Fiddle Demo](http://jsfiddle.net/tyrantchiong/NUTt8/2/ "Fiddle Demo")
