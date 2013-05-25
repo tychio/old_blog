@@ -19,79 +19,81 @@ category: Tech
 
 以下是一个简单的Demo：
 
-    (function ($, undefined) {
-        var mouse = {
-            x: -1,
-            y: -1
-        };
-        document.addEventListener('pointerlockchange', change, false);
-        document.addEventListener('mozpointerlockchange', change, false);
-        document.addEventListener('webkitpointerlockchange', change, false);
-        $("#canvas").click(function () {
-            var canvas = $("#canvas").get()[0];
-            canvas.requestPointerLock = canvas.requestPointerLock || canvas.mozRequestPointerLock || canvas.webkitRequestPointerLock 
-            || canvas.oRequestPointerLock || canvas.msRequestPointerLock;
-            canvas.requestPointerLock();
-        });
+```javascript
+(function ($, undefined) {
+    var mouse = {
+        x: -1,
+        y: -1
+    };
+    document.addEventListener('pointerlockchange', change, false);
+    document.addEventListener('mozpointerlockchange', change, false);
+    document.addEventListener('webkitpointerlockchange', change, false);
+    $("#canvas").click(function () {
+        var canvas = $("#canvas").get()[0];
+        canvas.requestPointerLock = canvas.requestPointerLock || canvas.mozRequestPointerLock || canvas.webkitRequestPointerLock 
+        || canvas.oRequestPointerLock || canvas.msRequestPointerLock;
+        canvas.requestPointerLock();
+    });
 
-        function change(e) {
-            var canvas = $("#canvas").get()[0];
-            if (document.pointerLockElement === canvas || document.mozPointerLockElement === canvas || document.webkitPointerLockElement === canvas) {
-                document.addEventListener("mousemove", move, false);
-            } else {
-                document.removeEventListener("mousemove", move, false);
-                mouse = {
-                    x: -1,
-                    y: -1
-                };
-            }
-        };
-
-        function move(e) {
-            var canvas = $("#canvas").get()[0];
-            var ctx = canvas.getContext('2d');
-            if (mouse.x == -1) {
-                mouse = _position(canvas, e);
-            }
-            var movementX = e.movementX || e.mozMovementX || e.webkitMovementX || 0;
-            var movementY = e.movementY || e.mozMovementY || e.webkitMovementY || 0;
-            mouse.x = mouse.x + movementX;
-            mouse.y = mouse.y + movementY;
-            if (mouse.x > $('#canvas').width() - 50) {
-                mouse.x = $('#canvas').width() - 50;
-            } else if (mouse.x < 0) {
-                mouse.x = 0;
-            }
-            if (mouse.y > $('#canvas').height() - 50) {
-                mouse.y = $('#canvas').height() - 50;
-            } else if (mouse.y < 0) {
-                mouse.y = 0;
-            }
-            ctx.clearRect(0, 0, 400, 400);
-            _show(mouse.x, mouse.y, ctx);
-        }
-
-        function _position(canvas, event) {
-            var x, y;
-            if (event.x != undefined && event.y != undefined) {
-                x = event.x;
-                y = event.y;
-            } else {
-                x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-                y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-            }
-            x -= canvas.offsetLeft;
-            y -= canvas.offsetTop;
-            return {
-                x: x,
-                y: y
+    function change(e) {
+        var canvas = $("#canvas").get()[0];
+        if (document.pointerLockElement === canvas || document.mozPointerLockElement === canvas || document.webkitPointerLockElement === canvas) {
+            document.addEventListener("mousemove", move, false);
+        } else {
+            document.removeEventListener("mousemove", move, false);
+            mouse = {
+                x: -1,
+                y: -1
             };
         }
+    };
 
-        function _show(_x, _y, _ctx) {
-            _ctx.fillStyle = 'red';
-            _ctx.fillRect(0, 0, _x, _y);
+    function move(e) {
+        var canvas = $("#canvas").get()[0];
+        var ctx = canvas.getContext('2d');
+        if (mouse.x == -1) {
+            mouse = _position(canvas, e);
         }
-    })(jQuery);
+        var movementX = e.movementX || e.mozMovementX || e.webkitMovementX || 0;
+        var movementY = e.movementY || e.mozMovementY || e.webkitMovementY || 0;
+        mouse.x = mouse.x + movementX;
+        mouse.y = mouse.y + movementY;
+        if (mouse.x > $('#canvas').width() - 50) {
+            mouse.x = $('#canvas').width() - 50;
+        } else if (mouse.x < 0) {
+            mouse.x = 0;
+        }
+        if (mouse.y > $('#canvas').height() - 50) {
+            mouse.y = $('#canvas').height() - 50;
+        } else if (mouse.y < 0) {
+            mouse.y = 0;
+        }
+        ctx.clearRect(0, 0, 400, 400);
+        _show(mouse.x, mouse.y, ctx);
+    }
+
+    function _position(canvas, event) {
+        var x, y;
+        if (event.x != undefined && event.y != undefined) {
+            x = event.x;
+            y = event.y;
+        } else {
+            x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+            y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+        }
+        x -= canvas.offsetLeft;
+        y -= canvas.offsetTop;
+        return {
+            x: x,
+            y: y
+        };
+    }
+
+    function _show(_x, _y, _ctx) {
+        _ctx.fillStyle = 'red';
+        _ctx.fillRect(0, 0, _x, _y);
+    }
+})(jQuery);
+```
 
 [Fiddle Demo](http://jsfiddle.net/tyrantchiong/NUTt8/2/ "Fiddle Demo")
