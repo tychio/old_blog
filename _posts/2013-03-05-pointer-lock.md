@@ -19,7 +19,7 @@ category: Tech
 
 以下是一个简单的Demo：
 
-`javascript
+```javascript
 
     (function ($, undefined) {
         var mouse = {
@@ -94,6 +94,6 @@ category: Tech
             _ctx.fillStyle = 'red';
             _ctx.fillRect(0, 0, _x, _y);
         }
-    })(jQuery);`
+    })(jQuery);
 
 [Fiddle Demo](http://jsfiddle.net/tyrantchiong/NUTt8/2/ "Fiddle Demo")
