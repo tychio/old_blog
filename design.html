@@ -4,6 +4,11 @@ title: Tychio's Blog
 ---
 
 <dl>
+    {% for post in site.categories %}
+    {% for i in post %}
+    {{i}}
+    {% endfor %}
+    {% endfor %}
     <dt>Design</dt>
 {% for post in site.categories.DESIGN %}
     <dd>
