@@ -20,7 +20,7 @@ layout: nil
    <link href="http://www.tychio.net{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>http://www.tychio.net{{ post.id }}</id>
-   <content type="html">{{ post.excerpt }}</content>
+   <content type="html"></content>
  </entry>
  {% endfor %}
  
