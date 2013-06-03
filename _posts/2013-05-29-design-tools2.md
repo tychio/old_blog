@@ -9,7 +9,6 @@ category: Design
 
 就算你熟练掌握Photoshop之类的图片处理工具，要制作一个小小的图标还是挺费时费力的。可是网上下载的话，颜色尺寸又不一定能适合，所以制作图片的工具将是非常必要的。
 
-
 ### [Online Generator](http://onlinegenerator.net/) ###
 
 [![Preloaders](http://onlinegenerator.net/images/preloaders.png)](http://preloaders.net/)
