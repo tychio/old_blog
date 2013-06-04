@@ -5,14 +5,12 @@ title: Tychio's Blog
 
 <dl>
     <dt>Design</dt>
-{% for post in site.posts %}
-{% if "Design" == post.category %}
+{% for post in site.categories.design %}
     <dd>
         <a href="{{ post.url }}">
             <time>{{ post.date | date_to_string }}</time>
             <h4>{{ post.title }}</h4>
         </a>
     </dd>
-{% endif %}
 {% endfor %}
 </dl>
