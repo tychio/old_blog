@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Color Theme Tool
-tags: [tool,recommend,color]
+title: 推荐几个配色工具
+tags: [tool,recommend,color,颜色,调色,配色]
 category: Design
 ---
 

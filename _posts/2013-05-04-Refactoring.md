@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Read the refactoring
-tags: [software,SE]
+title: 阅读Refactoring
+tags: [software,SE,软件工程,重构]
 category: Book
 ---
 

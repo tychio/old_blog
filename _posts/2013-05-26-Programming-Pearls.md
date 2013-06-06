@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Read the Programming Pearls
-tags: [software,SE,program,code]
+title: 阅读Programming Pearls
+tags: [software,SE,program,code,软件工程,编程珠玑]
 category: Book
 ---
 
