@@ -32,11 +32,13 @@ category: Tech
 也许enter回车这样没问题，但其他按键呢？于是我做了一组测试，发现了一些问题
 
 在keyup和keydown事件中：
+
 * IE只有keyCode，which为undefined。
 * Firefox的which有值，而keyCode为0，但F1-12键则恰好相反，which为0，keyCode有值。
 * Chrome和Opare中which和keyCode都有值。
 
 按键码的一些差异：
+
 * 在IE、Safari中和Chrome、Firefox、Opare中存在差异。
 * ‘+ =’键是187 => 61。
 * ‘; :’键是186 => 59。
@@ -63,6 +65,7 @@ category: Tech
 ---
 
 另外关于浏览器的兼容性：
+
 * IE8及以下和Opera12+是不支持charCode属性的。
 * 而在Firefox中，keypress事件触发时keyCode是没有值的。
 
@@ -89,9 +92,10 @@ category: Tech
 ---
 
 参考文章：
-[Key codes of keydown and keyup events](http://www.javascripter.net/faq/keycodes.htm)
-[Mozilla - keypress](https://developer.mozilla.org/en-US/docs/Web/Reference/Events/keypress)
-[W3C Standard](http://www.w3.org/TR/DOM-Level-3-Events/#event-type-keypress)
-[MSDN - charCode property](http://msdn.microsoft.com/en-us/library/ie/ff974890(v=vs.85).aspx)
+
+* [Key codes of keydown and keyup events](http://www.javascripter.net/faq/keycodes.htm)
+* [Mozilla - keypress](https://developer.mozilla.org/en-US/docs/Web/Reference/Events/keypress)
+* [W3C Standard](http://www.w3.org/TR/DOM-Level-3-Events/#event-type-keypress)
+* [MSDN - charCode property](http://msdn.microsoft.com/en-us/library/ie/ff974890(v=vs.85).aspx)
 
 
