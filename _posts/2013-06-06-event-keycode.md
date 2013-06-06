@@ -96,6 +96,6 @@ category: Tech
 * [Key codes of keydown and keyup events](http://www.javascripter.net/faq/keycodes.htm)
 * [Mozilla - keypress](https://developer.mozilla.org/en-US/docs/Web/Reference/Events/keypress)
 * [W3C Standard](http://www.w3.org/TR/DOM-Level-3-Events/#event-type-keypress)
-* [MSDN - charCode property](http://msdn.microsoft.com/en-us/library/ie/ff974890(v=vs.85).aspx)
+* [MSDN - charCode property](http://msdn.microsoft.com/en-us/library/ie/ff974890)
 
 
