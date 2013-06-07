@@ -69,6 +69,7 @@ section{ position: relative; float: left; overflow: hidden; z-index: 10000; top:
 /* ==list*/
 section dl{ text-align: right; color: #AA9999; font-size: 24px; }
 section dl dt{ line-height: 30px; font-size: 18px; padding: 70px 5px 5px; margin-bottom: 10px; border-bottom: 2px solid #AA9999; font-weight: bold; }
+section dl dt h1{ font-size: 20px; }
 section dl dd{ min-height: 40px; margin-left: 300px; }
 section dl dd a time{ float: left; display: inline; line-height: 50px; font-size: 18px; font-weight: normal; }
 section dl dd a h4{ overflow: hidden; padding: 5px 40px 5px 0; margin: 0; line-height: 40px; font-size: 28px; font-weight: normal;
