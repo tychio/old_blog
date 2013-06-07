@@ -92,7 +92,7 @@ section dl dd article pre code{ font-family: monaco; }
 section dl dd article hr{ border: 0; clear: both; }
 section dl dd div.comments{ padding-top: 20px; margin-top: 30px; border-top: 2px solid #AA9999; }
 /* =footer*/
-footer{ position: relative; left: 0; bottom: 40px; float: left; z-index: 11000; height: 40px; min-width: 1080px; width: 80%; }
+footer{ position: relative; left: 0; bottom: 40px; float: left; z-index: 11000; height: 40px; width: 80%; }
 footer a#backtop{ display: none; float: left; position: fixed; z-index: 1001; right: 0; bottom: 0; height: 40px; width: 20%; line-height: 60px; text-align: center; font-size: 24px; background: #1F1C1C; }
 footer address{ padding: 0 10px; text-align: right; }
 footer address span,
