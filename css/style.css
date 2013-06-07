@@ -43,7 +43,7 @@ header{ position: fixed; z-index: 12000; top: 0; left: 0; width: 100%; backgroun
         -ms-box-shadow: 0 0 5px #000;
          -o-box-shadow: 0 0 5px #000;
             box-shadow: 0 0 5px #000; }
-header div#top{ position: relative; height: 40px; min-width: 1080px; width: 80%; }
+header div#top{ position: relative; height: 40px; width: 80%; }
 header div#top a,
 header div#top a:link,
 header div#top a:visited{ color: #902020; }
