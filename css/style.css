@@ -60,14 +60,14 @@ header div#top nav{ position: absolute; top: 0; right: 0; margin: 0 2px;
 header div#top nav a{ padding-bottom: 20px; line-height: 20px; margin: 0 5px; }
 header div#top a#list{ display: none; }
 /* =section*/
-section{ position: relative; float: left; overflow: hidden; z-index: 10000; top: 0; left: 0; min-height: 100%; width: 80%; padding: 40px 0; background: #392020; opacity: 0.8; filter: alpha(opacity=80);
+section{ position: relative; float: left; overflow: hidden; z-index: 10000; top: 0; left: 0; min-height: 100%; width: 80%; background: #392020; opacity: 0.8; filter: alpha(opacity=80);
     -webkit-box-shadow: 0 0 5px #000;
        -moz-box-shadow: 0 0 5px #000;
         -ms-box-shadow: 0 0 5px #000;
          -o-box-shadow: 0 0 5px #000;
             box-shadow: 0 0 5px #000; }
 /* ==list*/
-section dl{ text-align: right; color: #AA9999; font-size: 24px; }
+section dl{ margin: 40px 0; text-align: right; color: #AA9999; font-size: 24px; }
 section dl dt{ line-height: 30px; font-size: 18px; padding: 70px 5px 5px; margin-bottom: 10px; border-bottom: 2px solid #AA9999; font-weight: bold; }
 section dl dt h1{ font-size: 20px; }
 section dl dd{ min-height: 40px; margin-left: 300px; }
@@ -95,7 +95,7 @@ section dl dd div.comments{ padding-top: 20px; margin-top: 30px; border-top: 2px
 /* =footer*/
 footer{ position: relative; left: 0; bottom: 40px; float: left; z-index: 11000; height: 40px; width: 80%; }
 footer a#backtop{ display: none; float: left; position: fixed; z-index: 1001; right: 0; bottom: 0; height: 40px; width: 20%; line-height: 60px; text-align: center; font-size: 24px; background: #1F1C1C; }
-footer address{ padding: 0 10px; text-align: right; }
+footer address{ padding: 6px 10px; text-align: right; }
 footer address span,
 footer address a{ padding: 0 4px; font-size: 16px; font-family: arial; color: #AA9999; }
 footer address a:link,
