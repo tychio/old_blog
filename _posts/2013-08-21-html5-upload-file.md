@@ -1,10 +1,17 @@
+---
+layout: post
+title: HTML5实现图片上传
+tags: [html5,html,file,upload]
+category: Tech
+---
+
 1.FileReader
-  -接口
+  -interface
     1) abort 中断读取
     2) readAsBinaryString @param file 将文件读取为二进制字符串
     3) readAsDataUrl @param file 将文件读取为DataURL即Base64码
     4) readAsText @param file,[encoding] 将文件读取为文本,encoding为编码方式，默认为utf-8
-  -事件
+  -event
     1) onabort 中断时fire
     2) onerror 错误时fire
     3) onload 文件成功读取完成时fire
@@ -13,10 +20,10 @@
     6) onprogress 文件读取过程中fire
 2.HTML5的input标签
   -fire
-    1) jQuery方法trigger触发
-    2) small button overflow:hidden
-    3) mousemove mouseenter mouseleave 使input在button内跟随鼠标
-    4) 利用label的for属性
+    1) jQuery方法trigger触发 ie8以内不支持
+    2) small button overflow:hidden 尺寸小，鼠标样式不能变
+    3) mousemove mouseenter mouseleave 使input在button内跟随鼠标，鼠标样式不能变，效率低
+    4) 利用label的for属性 firefox不支持
   -attribute
     1) multiple
     2) 
