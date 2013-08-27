@@ -11,7 +11,7 @@ category: Tech
 
 其实以前写过一个上传图片的插件，不过那时还活在IE6年代，只能用iframe搞定，虽然还挺好使的，不过在HTML5面前就是一个战斗力负5的渣渣，不仅需要后端返回各项数据，还必须把保存的临时图片地址再发给后端保存，实际请求是2次，而且还无法告诉用户上传进度与速度。
 
-### How to use the FileReader ? ###
+### 如何使用 FileReader ? ###
 
 首先FileReader是一个用于读取文件的类，我们可以用new关键字实例化一个文件读取器，像这样：
     
@@ -34,14 +34,15 @@ category: Tech
         <th width="20%">Safari</th>
     </tr>
     <tr>
-        <td>10+</td>
-        <td>7+</td>
-        <td>4.0+</td>
+        <td>10</td>
+        <td>7</td>
+        <td>3.6</td>
         <td>12.02</td>
         <td>6.02</td>
     </tr>
 </table>
 ---
+
 
 使用FileReader很简单，它提供了四个简单的接口用来读取文件，分别是abort，readAsBinaryString，readAsDataURL，readAsText。
 
@@ -74,41 +75,154 @@ readAsDataURL的result则是一个Base64的图片代码，可以直接放入HTML
 
 ###### readAsText ######
 
+readAsText的result和二进制的显示出来基本是一样的，包括一个信息头，接着大段的乱码应该是图片本身。
+
+该方法还有一个可选的参数[encoding]，即文本的编码方式，默认为urf-8。
 
 ##### Abort #####
-1.FileReader
-  -interface
-    1) abort 中断读取
-    2) readAsBinaryString @param file 将文件读取为二进制字符串
-    3) readAsDataUrl @param file 将文件读取为DataURL即Base64码
-    4) readAsText @param file,[encoding] 将文件读取为文本,encoding为编码方式，默认为utf-8
-  -event
-    1) onabort 中断时fire
-    2) onerror 错误时fire
-    3) onload 文件成功读取完成时fire
-    4) onloadend 文件读取结束时无论成功与否fire
-    5) onloadstart 文件读取开始时fire
-    6) onprogress 文件读取过程中fire
-2.HTML5的input标签
-  -fire
-    1) jQuery方法trigger触发 ie8以内不支持
-    2) small button overflow:hidden 尺寸小，鼠标样式不能变
-    3) mousemove mouseenter mouseleave 使input在button内跟随鼠标，鼠标样式不能变，效率低
-    4) 利用label的for属性 firefox不支持
-  -attribute
-    1) multiple
-    2) 
-3.FormData
-    1) append 添加一个parameter
-    2) 
+
+abort是一个特别的方法，用来打断读取。当图片上传超时或者其他操作需要打断时就可以调用这个接口打断。另外还可以监听abort事件来处理打断后的情况。
+
+##### Event #####
+
+当然，除了abort事件还有许多其他的事件。
+
+1.abort 上传中断时触发。
+2.error 上传出错时触发。
+3.load 文件成功读取完成时触发。
+4.loadend 文件读取结束时无论是否成功触发。
+5.loadstart 文件读取开始时触发。
+6.progress 文件读取过程中每秒触发一次。
+
+###### progress ######
+
+progress方法比较特殊，会在上传过程中一直触发，并获取当前上传的量和总量等数据。
+主要需要用到的有2个数据，loaded已上传的部分和total总量，单位都是b，利用它们算出上传进度就可以显示百分比或设置进度条的宽度，甚至算出上传速度。
+
+另外progress的监听比较特殊，像这样：
+
+    xhr.upload.addEventListener('progress', function (p_event) {
+        var _loaded = p_event.loaded;
+        var _total = p_event.total;
+        var _percent = Math.round(_loaded * 100 / _total);
+        // using percent...
+    }, false);
+
+需要使用xhr.upload的addEventListener方法来监听事件，而不是直接使用xhr。
+
+### 使用FormData组织表单数据 ###
+
+文件上传基本没有问题了，但是引起了一个新的问题。如果使用HTML5的上传方式那么就必须使用Ajax请求来与服务器通信，但表单中的文件应该如何以参数的方式通过ajax请求传送呢？
+
+在DOM API中，Form提供了一个方法 - FormData，它可以将表单元素的DOM对象直接转换为参数，通过Ajax请求传送。用起来很简单，使用new关键字将DOM对象传入参数即可：
+
+    var _fd = new FormData(document.getElementsByTagName('form')[0]);
+
+然后只需要在Ajax请求中送出即可：
+
+    xhr.send(_fd);
+
+##### append #####
+
+当然我们也可以加入不在表单中的额外参数，使用append方法即可：
+    
+    var xhr = new XMLHttpRequest();  
+    var formData = new FormData(document.getElementsByTagName('form')[0]);
+    formData.append('param1', 'a parameter');
+    xhr.open('POST', 'uploader.php');
+    xhr.send(formData);
+
+append方法一般可以传入一对键值组合的参数用来添加到表单数据之中，但它还提供了另外一种用法，传入参数名以及一个Blob或者File，另外还有第三个可选的参数，是该参数的文件名。
+
+至于Blob，是一个类似于文件的Object，我的理解是它在某些环境中可以解析为文件，但是在浏览器中是无法识别的。
+
+##### 支持情况 #####
+
+作为一个HTML5的方法自然也是有浏览器支持的问题的，如下表：
+
+---
+<table style="text-align: center;">
+    <tr>
+        <th width="20%">IE</th>
+        <th width="20%">Chrome</th>
+        <th width="20%">Firefox</th>
+        <th width="20%">Opera</th>
+        <th width="20%">Safari</th>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>7+</td>
+        <td>4.0</td>
+        <td>12+</td>
+        <td>5+</td>
+    </tr>
+</table>
+---
+
+不过append方法的支持情况就有点不尽人意了，只有Chrome完全支持，Firefox在22以后才支持，其他浏览器均不支持。
+
+### INPUT标签 ###
+
+最后，是一个文件上传的老问题，无论是HTML5还是4，file类型的input标签样式总是无法统一，也无法美化。所以我们只能以暴制暴，不能化妆那就整容，用其他元素把它彻底覆盖掉。众所周知的做法是把input隐藏，然后问题来了，如何触发上传。
+
+###### trigger ######
+
+一般首先想到的是模拟触发，比如jQuery中的trigger方法，可以让我们点击甚至其他动作时触发input标签。但是IE由于安全性问题不允许模拟触发file类型的input标签事件，所以如果不支持IE的项目可以使用这个方法轻松搞定。
+
+###### 透明化按钮 ######
+
+既然不能模拟，真实用户的点击行为自然是没问题了吧，于是另一个方法诞生了，将input标签变成透明的，覆盖在一个按钮样式的标签上，如此用户看到的是一个美化的按钮，点击的却是Input标签。但是有一个问题，file类型的Input标签在各浏览器中的尺寸和位置都是不太一致的，尤其是改变其尺寸后，有的浏览器甚至无法改变。所以如何按钮较大或者直接是一个区域时则会出现问题。
+
+###### 鼠标跟随 ######
+
+方法继续进化，虽然点击区域的尺寸可能会很大，但鼠标的点击永远只是一个点，于是只要让Input标签一直跟随鼠标在区域内移动，将可点击部分随时对准鼠标指针，就可以让鼠标在区域内点击到Input标签了。这个方法解决了所有问题，但它的效率很成问题，甚至不能过分使用函数节流，因为移动过快时可能点击不到。
+
+###### Label触发 ######
+
+后来在StackOverflow上看到了一个很不错的方法，就是利用Labal标签的for属性去触发input标签，只要将for的值写成Input的Id即可。但在我的测试中Firefox好像是不能触发的，不知道是否还有其他的属性需要设置。
+
+这四种方法各有各的优劣，只能根据具体情况选择使用了。
+
+##### 多文件上传 Multiple #####
+
+在Input标签上也出现了一个很实用的HTML5的新功能，那就是多文件上传，实现也非常简单，只要加上multiple的属性即可
+
+    <input type="file" name="files[]" multiple="multiple" />
+
+如此在上传的时候就可以选择多个文件，另外在后端接受数据时，每个属性都变成了一个数组，以PHP为例：
+
+    <?php
+        // print_r($_FILES["files"]);
+        for ($i = 0; $i < count($_FILES["files"]["error"]); $i++) { 
+            echo "No.".$i;
+            if ($_FILES["files"]["error"][$i] > 0) {
+                // $_FILES["files"][$i]["error"] is wrong!
+                echo "<p>Error: " . $_FILES["files"]["error"][$i] . "<p/>";
+            } else {
+                echo "<p>Upload: " . $_FILES["files"]["name"][$i] . "<p/>";
+                echo "<p>Type: " . $_FILES["files"]["type"][$i] . "<p/>";
+                echo "<p>Size: " . ($_FILES["files"]["size"][$i] / 1024) . " Kb<p/>";
+                if (file_exists("img/" . $_FILES["files"]["name"][$i])) {
+                    echo $_FILES["files"]["name"][$i] . " already exists. ";
+                } else {
+                    move_uploaded_file($_FILES["files"]["tmp_name"][$i],
+                        "img/" . $_FILES["files"]["name"][$i]);
+                    echo "Stored in: " . "img/" . $_FILES["files"]["name"][$i];
+                }
+                echo "<hr/>";
+            }
+        }
+    ?>
 
 
-[W3C FileReader Interface](http://www.w3.org/TR/FileAPI/)
-[MDN FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader?redirectlocale=en-US&redirectslug=DOM%2FFileReader)
-[MDN DOM Files](https://developer.mozilla.org/en-US/docs/Web/API/File)
+### 参考文档： ###
 
-[Using FormData to send forms with xhr as key/value pairs](http://robertnyman.com/2013/02/11/using-formdata-to-send-forms-with-xhr-as-keyvalue-pairs/)
-[MDN FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData)
-[Whatwg Interface FormData](http://xhr.spec.whatwg.org/#interface-formdata)
+* [W3C FileReader Interface](http://www.w3.org/TR/FileAPI/)
+* [MDN FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader?redirectlocale=en-US&redirectslug=DOM%2FFileReader)
+* [MDN DOM Files](https://developer.mozilla.org/en-US/docs/Web/API/File)
 
-[W3C Forms multiple](http://www.w3.org/html/wg/drafts/html/master/forms.html#multipart-form-data)
+* [Using FormData to send forms with xhr as key/value pairs](http://robertnyman.com/2013/02/11/using-formdata-to-send-forms-with-xhr-as-keyvalue-pairs/)
+* [MDN FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData)
+* [Whatwg Interface FormData](http://xhr.spec.whatwg.org/#interface-formdata)
+
+* [W3C Forms multiple](http://www.w3.org/html/wg/drafts/html/master/forms.html#multipart-form-data)
