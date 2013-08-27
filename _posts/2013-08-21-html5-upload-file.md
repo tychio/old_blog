@@ -220,9 +220,7 @@ append方法一般可以传入一对键值组合的参数用来添加到表单�
 * [W3C FileReader Interface](http://www.w3.org/TR/FileAPI/)
 * [MDN FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader?redirectlocale=en-US&redirectslug=DOM%2FFileReader)
 * [MDN DOM Files](https://developer.mozilla.org/en-US/docs/Web/API/File)
-
 * [Using FormData to send forms with xhr as key/value pairs](http://robertnyman.com/2013/02/11/using-formdata-to-send-forms-with-xhr-as-keyvalue-pairs/)
 * [MDN FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData)
 * [Whatwg Interface FormData](http://xhr.spec.whatwg.org/#interface-formdata)
-
 * [W3C Forms multiple](http://www.w3.org/html/wg/drafts/html/master/forms.html#multipart-form-data)
