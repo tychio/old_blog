@@ -67,7 +67,7 @@ section{ position: relative; float: left; overflow: hidden; z-index: 10000; top:
          -o-box-shadow: 0 0 5px #000;
             box-shadow: 0 0 5px #000; }
 /* ==list*/
-section dl{ margin: 40px 0; text-align: right; color: #AA9999; font-size: 24px; }
+section dl{ margin: 40px 0; text-align: right; color: #E7E0E0; font-size: 24px; }
 section dl dt{ line-height: 30px; font-size: 18px; padding: 70px 5px 5px; margin-bottom: 10px; border-bottom: 2px solid #AA9999; font-weight: bold; }
 section dl dt h1{ font-size: 20px; }
 section dl dd{ min-height: 40px; margin-left: 300px; }
