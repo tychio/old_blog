@@ -1,0 +1,331 @@
+/* -------------- VARIABLE ---------------- */
+/* =index */
+$indexHeader = 12000
+$indexFooter = 11000
+$indexBody = 10000
+$indexBacktop = 1001
+/* responsive */
+$responsive = 1280px 1024px 640px 320px
+/* animation */
+$animateTime = 0.3s
+/* =font */
+$fontBody = aviel
+$fontTitle = aftommy
+$fontCode = monaco
+$fontBackup = arial "微软雅黑" "黑体"
+/* =color */
+/* ==background */
+$colorBlack = black
+$colorBg = #333333
+$colorHeader = #1F1C1C
+$colorBody = #392020
+$colorCode = #220000
+/* ==font */
+$colorText = #AA9999
+$colorTextHover = #CCBBBB
+$colorTitleLink = #902020
+$colorTitleLinkHover = #A03030
+$colorLink = #00A09A
+$colorLinkHover = #F03030
+$colorArticle = #E7E0E0
+/* =img */
+$imgBg = "/img/bg.png"
+/* =size */
+$sizeContentWidthPer = 80% 85% 90% 95% 100%
+$sizeLeftWidth = 300px 180px 80px 10px 0
+$sizeImgMaxWidth = 100%
+$sizeHeaderHeight = 40px
+$sizeTitleHeight = 24px
+$sizeNavHeight = 20px
+$sizeArticleLineHeight = 30px
+$sizeCodeLineHeight = 20px
+$sizeFooterHeight = 40px
+$sizeBarHeight = 50px
+$sizeCodeMaxHeight = 500px
+$sizeArticleTop = 70px
+$sizeCommentTop = 40px
+$sizeTextRight = 20px
+$sizeTextTop = 10px
+$sizeBarIndent = 40px
+$sizeArticleIndent = 28px
+
+$sizeMargin = 5px
+$sizeBorder = 2px
+$sizeShadow = 5px
+$sizeLetterSpace = 1px
+$sizeLinePadding = 8px
+/* =font size */
+$remBar = 1.5rem
+$remArticle = 0.9rem
+$remIcon = 1.4rem
+/* -------------- FUNCTION ---------------- */
+fontFace(p_font)
+    @font-face
+        font-family p_font
+        src url(/font/p_font.ttf) format("truetype")
+shadow(p_attr)
+    -webkit-box-shadow p_attr
+    -moz-box-shadow p_attr
+    -ms-box-shadow p_attr
+    -o-box-shadow p_attr
+    box-shadow p_attr
+transition(p_attr)
+    -webkit-transition p_attr
+    -moz-transition p_attr
+    -ms-transition p_attr
+    -o-transition p_attr
+    transition p_attr
+media(p_min = 0px, p_max = 10000px, p_width, p_left)
+    @media all and (min-width: p_min) and (max-width: p_max)
+        header div#top,
+        section, footer
+            width p_width
+        section dl dd
+            margin-left p_left
+        footer a#backtop
+            width 100% - p_width
+/* ---------------- STYLE ----------------- */
+/* =web font */
+fontFace($fontBody)
+fontFace($fontTitle)
+fontFace($Code)
+/* =tools */
+/* ==for html5 tags */
+article, aside, figcaption, figure, dialog, time,
+footer, header, nav, section, main
+    display block
+/* ==reset style */
+html,body
+    height 100%
+    width 100%
+    padding 0
+    margin 0
+    font-family $fontBackup
+    font-size 100%
+    line-height 1
+ol, ul
+    list-style none
+blockquote, q
+    quotes none
+    &:after, &:before
+        content ''
+        content none
+table
+    border-collapse collapse
+    border-spacing 0
+/* ==clear chrome style */
+input, textarea, select, a, button
+    outline none
+/* ==clearfix float */
+.clearfix:after
+    content "."
+    display block
+    height 0
+    clear both
+    visibility hidden
+/* =initialize */
+a
+    &, &:link, &:visited
+        color $colorText
+    &:hover
+        color $colorTextHover
+body
+    background $colorBg url($imgBg) repeat
+    font-family $fontBody
+    color $colorArticle
+hr
+    border 0
+    clear both
+/* =layout */
+/* ==header */
+header
+    position fixed
+    z-index $indexHeader
+    top 0
+    left 0
+    width 100%
+    background $colorHeader
+    font-family $fontTitle
+    shadow(0 0 $sizeShadow $colorBlack)
+    div#top
+        position: relative
+        height: $sizeHeaderHeight
+        width: $sizeContentWidthPer[0]
+        a
+            &, &:link, &:visited
+                color colorTitleLink
+            &:hover
+                color colorTitleLinkHover
+            h1
+                display inline-block
+                line-height $sizeTitleHeight
+                margin-top $sizeHeaderHeight - $sizeTitleHeight
+                font-size $sizeTitleHeight
+        nav
+            position absolute
+            top 0
+            right 0
+            a
+                padding-bottom $sizeHeaderHeight - $sizeNavHeight
+                line-height $sizeNavHeight
+                margin 0 $sizeMargin
+                #list
+                    display none
+/* ==body */
+section
+    position relative
+    float left
+    overflow hidden
+    z-index $indexBody
+    top 0
+    left 0
+    min-height 100%
+    width $sizeContentWidthPer[0]
+    background $colorBody
+    opacity: 0.8
+    shadow(0 0 $sizeShadow $colorBlack)
+    dl
+        margin $sizeHeaderHeight 0 $sizeFooterHeight
+        text-align right
+        dt
+            line-height $sizeCategoryHeight
+            font-size $sizeCategoryHeight
+            padding $sizeArticleTop $sizeMargin $sizeMargin
+            border-bottom $sizeBorder solid $colorText
+            font-weight bold
+            color $colorText
+        dd
+            min-height $sizeBarHeight
+            margin-left $sizeLeftWidth[0]
+            a
+                time
+                    float left
+                    display inline
+                    line-height $sizeBarHeight
+                    font-weight normal
+                h4
+                    overflow hidden
+                    padding-right $sizeBarIndent
+                    margin 0
+                    line-height $sizeBarHeight
+                    font-size $remBar
+                    font-weight normal
+                    transition(padding $animateTime)
+                    &:hover
+                        padding-right: $sizeMargin
+            article
+                overflow hidden
+                text-align left
+                font-size $remArticle
+                line-height $sizeArticleLineHeight
+                letter-spacing $sizeLetterSpace
+                word-wrap break-word
+                color $colorArticle
+                time
+                    padding 0 $sizeMargin
+                    text-align right
+                    color $colorText
+                img
+                    float left
+                    margin-right $sizeTextRight
+                    margin-top $sizeTextTop
+                    max-width $sizeImgMaxWidth
+                p
+                    padding $sizeMargin
+                    margin 0
+                    text-indent $sizeArticleIndent
+                a
+                    &, &:link, &:visited
+                        color $colorLink
+                        text-decoration underline
+                    &:hover
+                        color $colorLinkHover
+                pre
+                    overflow auto
+                    max-height $sizeCodeMaxHeight
+                    padding $sizeTextTop $sizeTextRight
+                    line-height $sizeCodeLineHeight
+                    background $colorCode
+                    code
+                        font-family $fontCode
+            div.comment
+                padding-top $sizeCommentTop*0.5
+                margin-top $sizeCommentTop*0.5
+                border-top $sizeBorder solid $colorText
+/* =footer */
+footer
+    float left
+    position relative
+    z-index $indexFooter
+    left 0
+    bottom $sizeFooterHeight
+    height $sizeFooterHeight
+    width $sizeContentWidthPer[0]
+    a#backtop
+        display none
+        float left
+        position fixed
+        z-index $indexBacktop
+        right 0
+        bottom 0
+        height $sizeFooterHeight
+        width 100% - $sizeContentWidthPer[0]
+        line-height $sizeFooterHeight + 20px
+        text-align center
+        font-size $remIcon
+        background $colorHeader
+    address
+        padding $sizeLinePadding
+        text-align right
+        span, a
+            padding 0 $sizeMargin
+            color $colorText
+        a:link, a:visited
+            color $colorText
+/* =responsive */
+
+/* responsive */
+@media all and (min-width: 1025px) and (max-width: 1280px) {
+    header div#top,
+    section, footer{ width: 85%; }
+    section dl dd{ margin-left: 180px; }
+    footer a#backtop{ width: 15%; }
+}
+@media all and (min-width: 641px) and (max-width: 1024px) {
+    header div#top,
+    section, footer{ width: 85%; }
+    section dl dd{ margin-left: 80px; }
+    footer a#backtop{ width: 15%; }
+}
+@media all and (min-width: 641px) and (max-width: 900px) {
+    header div#top nav a{ margin: 0; font-size: 12px; }
+    section dl dd a h4{ font-weight: bold; }
+}
+@media all and (max-width: 640px) {
+    header div#top{ position: static; }
+    header div#top nav{ overflow: hidden; position: static; height: 0; width: 100%; margin: 0; background: #1F1C1C; }
+    header div#top nav a{ display: block; height: 40px; line-height: 40px; padding: 0; }
+    header div#top nav a:hover{ background: #999; }
+    header div#top a#list{ display: block; position: absolute; right: 10px; top: 0; height: 40px; width: 40px; background: url(../img/list.png) no-repeat center center; opacity: 0.8; }
+    header div#top a#list:hover{ opacity: 1; }
+    header div#top,
+    section, footer{ width: 95%; }
+    section dl dd{ margin-left: 10px; }
+    section dl dd a h4{ font-size: 20px; }
+    section dl dd a time{ display: none; }
+    section dl dd article{ line-height: 30px; font-size: 12px; }
+    section dl dd article time{ padding: 10px; font-size: 16px; }
+    footer a#backtop{ width: 5%; }
+}
+@media all and (max-width: 320px) {
+    header div#top,
+    section, footer{ min-width: 240px; width: 100%; }
+    footer a#backtop{ width: 30px; }
+}
+
+
+
+
+
+
+
