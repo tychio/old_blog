@@ -12,7 +12,7 @@ $animateTime = 0.3s
 $fontBody = aviel
 $fontTitle = aftommy
 $fontCode = monaco
-$fontBackup = arial "微软雅黑" "黑体"
+$fontBackup = "微软雅黑" arial "黑体"
 /* =color */
 /* ==background */
 $colorBlack = black
@@ -154,9 +154,9 @@ header
         width: $sizeContentWidthPer[0]
         a
             &, &:link, &:visited
-                color colorTitleLink
+                color $colorTitleLink
             &:hover
-                color colorTitleLinkHover
+                color $colorTitleLinkHover
             h1
                 display inline-block
                 line-height $sizeTitleHeight
