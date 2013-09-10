@@ -59,6 +59,7 @@ $sizeLinePadding = 8px
 /* =font size */
 $remBar = 1.5rem
 $remArticle = 0.9rem
+$remTitle = 1.1rem
 $remIcon = 1.4rem
 /* -------------- FUNCTION ---------------- */
 fontFace(p_font)
@@ -197,6 +198,8 @@ section
             border-bottom $sizeBorder solid $colorText
             font-weight bold
             color $colorText
+            h1
+                font-size $remTitle
         dd
             min-height $sizeBarHeight
             margin-left $sizeLeftWidth[0]
@@ -234,6 +237,8 @@ section
                     margin-right $sizeTextRight
                     margin-top $sizeTextTop
                     max-width $sizeImgMaxWidth
+                h1
+                    font-size 2rem
                 h2
                     font-size 1.8rem
                 h3
@@ -244,7 +249,7 @@ section
                     font-size 1.3rem
                 h6
                     font-size 1.2rem
-                h2,h3,h4,h5,h6
+                h1,h2,h3,h4,h5,h6
                     color $colorWhite
                 p
                     padding $sizeMargin
