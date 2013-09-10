@@ -16,6 +16,7 @@ $fontBackup = "微软雅黑" arial "黑体"
 /* =color */
 /* ==background */
 $colorBlack = black
+$colorWhite = white
 $colorBg = #333333
 $colorHeader = #1F1C1C
 $colorBody = #392020
@@ -37,6 +38,7 @@ $sizeImgMaxWidth = 100%
 $sizeHeaderHeight = 40px
 $sizeTitleHeight = 24px
 $sizeNavHeight = 20px
+$sizeCategoryHeight = 30px
 $sizeArticleLineHeight = 30px
 $sizeCodeLineHeight = 20px
 $sizeFooterHeight = 40px
@@ -88,7 +90,7 @@ media(p_min = 0px, p_max = 10000px, p_width, p_left)
 /* =web font */
 fontFace($fontBody)
 fontFace($fontTitle)
-fontFace($Code)
+fontFace($fontCode)
 /* =tools */
 /* ==for html5 tags */
 article, aside, figcaption, figure, dialog, time,
@@ -232,6 +234,20 @@ section
                     margin-right $sizeTextRight
                     margin-top $sizeTextTop
                     max-width $sizeImgMaxWidth
+                h1
+                    font-size 2rem
+                h2
+                    font-size 1.8rem
+                h3
+                    font-size 1.6rem
+                h4
+                    font-size 1.4rem
+                h5
+                    font-size 1.3rem
+                h6
+                    font-size 1.2rem
+                h1,h2,h3,h4,h5,h6
+                    color $colorWhite
                 p
                     padding $sizeMargin
                     margin 0
