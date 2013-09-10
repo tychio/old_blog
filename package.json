@@ -1,0 +1,9 @@
+{
+    "name": "TychioBlog",
+    "version": "0.1.0",
+    "devDependencies": {
+        "grunt": "*",
+        "grunt-contrib-stylus": "*",
+        "grunt-contrib-watch": "*"
+    }
+}
