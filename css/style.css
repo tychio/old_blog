@@ -34,13 +34,12 @@ section dl dd a h4:hover{padding-right:5px}
 section dl dd article{overflow:hidden;text-align:left;font-size:.9rem;font-family:"微软雅黑" arial "黑体";line-height:30px;letter-spacing:1px;word-wrap:break-word;color:#e7e0e0;}
 section dl dd article time{padding:0 5px;text-align:right;color:#a99}
 section dl dd article img{float:left;margin-right:20px;margin-top:10px;max-width:100%}
-section dl dd article h1{font-size:2rem}
 section dl dd article h2{font-size:1.8rem}
 section dl dd article h3{font-size:1.6rem}
 section dl dd article h4{font-size:1.4rem}
 section dl dd article h5{font-size:1.3rem}
 section dl dd article h6{font-size:1.2rem}
-section dl dd article h1,section dl dd article h2,section dl dd article h3,section dl dd article h4,section dl dd article h5,section dl dd article h6{color:#fff}
+section dl dd article h2,section dl dd article h3,section dl dd article h4,section dl dd article h5,section dl dd article h6{color:#fff}
 section dl dd article p{padding:5px;margin:0;text-indent:28px}
 section dl dd article a,section dl dd article a:link,section dl dd article a:visited{color:#00a09a;text-decoration:underline}
 section dl dd article a:hover{color:#f03030}
