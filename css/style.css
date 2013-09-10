@@ -49,7 +49,7 @@ section dl dd article pre code{font-family:monaco}
 section dl dd div.comment{padding-top:20px;margin-top:20px;border-top:2px solid #a99}
 footer{float:left;position:relative;z-index:11000;left:0;bottom:40px;height:40px;width:80%;}
 footer a#backtop{display:none;float:left;position:fixed;z-index:1001;right:0;bottom:0;height:40px;width:20%;line-height:60px;text-align:center;font-size:1.4rem;background:#1f1c1c}
-footer address{padding:8px;text-align:right;}
+footer address{padding:8px;text-align:right;font-family:aftommy;}
 footer address span,footer address a{padding:0 5px;color:#a99}
 footer address a:link,footer address a:visited{color:#a99}
 @media all and (min-width: 1025px) and (max-width: 1280px){header div#top,section,footer{width:85%}
