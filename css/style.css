@@ -53,19 +53,19 @@ footer a#backtop{display:none;float:left;position:fixed;z-index:1001;right:0;bot
 footer address{padding:8px;text-align:right;font-family:aftommy;}
 footer address span,footer address a{padding:0 5px;color:#a99}
 footer address a:link,footer address a:visited{color:#a99}
-@media all and (min-width 1025px) and (max-width 1280px){header div#top,section,footer{width:85%}
+@media all and (min-width: 1025px) and (max-width: 1280px){header div#top,section,footer{width:85%}
 section dl dd{margin-left:180px}
 footer a#backtop{width:15%}
-}@media all and (min-width 641px) and (max-width 1024px){header div#top,section,footer{width:90%}
+}@media all and (min-width: 641px) and (max-width: 1024px){header div#top,section,footer{width:90%}
 section dl dd{margin-left:80px}
 footer a#backtop{width:10%}
-}@media all and (min-width 321) and (max-width 640){header div#top,section,footer{width:95%}
+}@media all and (min-width: 321) and (max-width: 640){header div#top,section,footer{width:95%}
 section dl dd{margin-left:10px}
 footer a#backtop{width:5%}
-}@media all and (max-width 320){header div#top,section,footer{width:100%}
+}@media all and (max-width: 320){header div#top,section,footer{width:100%}
 section dl dd{margin-left:0}
 footer a#backtop{width:0%}
-}@media all and (min-width 641px) and (max-width 900px){header div#top nav a{margin:0;font-size:.7rem}
+}@media all and (min-width: 641px) and (max-width: 900px){header div#top nav a{margin:0;font-size:.7rem}
 section dl dd a h4{font-weight:bold}
 }@media all and (max-width 640px){header div#top{position:static;min-width:240px;}
 header div#top nav{overflow:hidden;position:static;height:0;width:100%;margin:0;background:#1f1c1c;}
