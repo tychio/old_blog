@@ -71,8 +71,8 @@ section dl dd a h4{font-weight:bold}
 header div#top nav{overflow:hidden;position:static;height:0;width:100%;margin:0;background:#1f1c1c;}
 header div#top nav a{display:block;height:40px;line-height:40px;padding:0;}
 header div#top nav a:hover{background:#808080}
-header div#top nav a#list{display:block;position:absolute;right:5px;top:0;height:40px;width:40px;background:url("/img/list.png") no-repeat center center;opacity:.8;}
-header div#top nav a#list:hover{opacity:1}
+header div#top a#list{display:block;position:absolute;right:5px;top:0;height:40px;width:40px;background:url("/img/list.png") no-repeat center center;opacity:.8;}
+header div#top a#list:hover{opacity:1}
 section dl dd{min-width:240px;}
 section dl dd a h4{font-size:1.1rem}
 section dl dd a time{display:none}
