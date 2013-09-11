@@ -114,7 +114,7 @@ progress方法比较特殊，会在上传过程中一直触发，并获取当前
 
 文件上传基本没有问题了，但是引起了一个新的问题。如果使用HTML5的上传方式那么就必须使用Ajax请求来与服务器通信，但表单中的文件应该如何以参数的方式通过ajax请求传送呢？
 
-在DOM API中，Form提供了一个方法 - FormData，它可以将表单元素的DOM对象直接转换为参数，通过Ajax请求传送。用起来很简单，使用new关键字将DOM对象传入参数即可：
+在DOM API中，Form提供了一个方法FormData，它可以将表单元素的DOM对象直接转换为参数，通过Ajax请求传送。用起来很简单，使用new关键字将DOM对象传入参数即可：
 
     var _fd = new FormData(document.getElementsByTagName('form')[0]);
 
