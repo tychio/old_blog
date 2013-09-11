@@ -53,27 +53,30 @@ footer a#backtop{display:none;float:left;position:fixed;z-index:1001;right:0;bot
 footer address{padding:8px;text-align:right;font-family:aftommy;}
 footer address span,footer address a{padding:0 5px;color:#a99}
 footer address a:link,footer address a:visited{color:#a99}
-@media all and (min-width: 1025px) and (max-width: 1280px){header div#top,section,footer{width:85%}
+@media all and (min-width 1025px) and (max-width 1280px){header div#top,section,footer{width:85%}
 section dl dd{margin-left:180px}
 footer a#backtop{width:15%}
-}@media all and (min-width: 641px) and (max-width: 1024px){header div#top,section,footer{width:85%}
+}@media all and (min-width 641px) and (max-width 1024px){header div#top,section,footer{width:90%}
 section dl dd{margin-left:80px}
-footer a#backtop{width:15%}
-}@media all and (min-width: 641px) and (max-width: 900px){header div#top nav a{margin:0;font-size:12px}
-section dl dd a h4{font-weight:bold}
-}@media all and (max-width: 640px){header div#top{position:static}
-header div#top nav{overflow:hidden;position:static;height:0;width:100%;margin:0;background:#1f1c1c}
-header div#top nav a{display:block;height:40px;line-height:40px;padding:0}
-header div#top nav a:hover{background:#999}
-header div#top a#list{display:block;position:absolute;right:10px;top:0;height:40px;width:40px;background:url("../img/list.png") no-repeat center center;opacity:.8}
-header div#top a#list:hover{opacity:1}
-header div#top,section,footer{width:95%}
+footer a#backtop{width:10%}
+}@media all and (min-width 321) and (max-width 640){header div#top,section,footer{width:95%}
 section dl dd{margin-left:10px}
-section dl dd a h4{font-size:20px}
-section dl dd a time{display:none}
-section dl dd article{line-height:30px;font-size:12px}
-section dl dd article time{padding:10px;font-size:16px}
 footer a#backtop{width:5%}
-}@media all and (max-width: 320px){header div#top,section,footer{min-width:240px;width:100%}
-footer a#backtop{width:30px}
+}@media all and (max-width 320){header div#top,section,footer{width:100%}
+section dl dd{margin-left:0}
+footer a#backtop{width:0%}
+}@media all and (min-width 641px) and (max-width 900px){header div#top nav a{margin:0;font-size:.7rem}
+section dl dd a h4{font-weight:bold}
+}@media all and (max-width 640px){header div#top{position:static;min-width:240px;}
+header div#top nav{overflow:hidden;position:static;height:0;width:100%;margin:0;background:#1f1c1c;}
+header div#top nav a{display:block;height:40px;line-height:40px;padding:0;}
+header div#top nav a:hover{background:#808080}
+header div#top nav a#list{display:block;position:absolute;right:5px;top:0;height:40px;width:40px;background:url("/img/list.png") no-repeat center center;opacity:.8;}
+header div#top nav a#list:hover{opacity:1}
+section dl dd{min-width:240px;}
+section dl dd a h4{font-size:1.1rem}
+section dl dd a time{display:none}
+section dl dd article{font-size:.7rem;}
+section dl dd article time{padding:5px}
+footer a#backtop{min-width:30px}
 }

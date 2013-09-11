@@ -4,10 +4,9 @@ $indexHeader = 12000
 $indexFooter = 11000
 $indexBody = 10000
 $indexBacktop = 1001
-/* responsive */
-$responsive = 1280px 1024px 640px 320px
 /* animation */
 $animateTime = 0.3s
+$opacity = 0.8
 /* =font */
 $fontBody = aviel
 $fontTitle = aftommy
@@ -17,6 +16,7 @@ $fontBackup = "微软雅黑" arial "黑体"
 /* ==background */
 $colorBlack = black
 $colorWhite = white
+$colorGray = gray
 $colorBg = #333333
 $colorHeader = #1F1C1C
 $colorBody = #392020
@@ -30,11 +30,14 @@ $colorLink = #00A09A
 $colorLinkHover = #F03030
 $colorArticle = #E7E0E0
 /* =img */
-$imgBg = "/img/bg.png"
+$imgBase = "/img/"
+$imgBg = $imgBase + "bg.png"
+$imgList = $imgBase + "list.png"
 /* =size */
 $sizeContentWidthPer = 80% 85% 90% 95% 100%
 $sizeLeftWidth = 300px 180px 80px 10px 0
 $sizeImgMaxWidth = 100%
+$sizeMinWidth = 240px
 $sizeHeaderHeight = 40px
 $sizeTitleHeight = 24px
 $sizeNavHeight = 20px
@@ -61,6 +64,7 @@ $remBar = 1.5rem
 $remArticle = 0.9rem
 $remTitle = 1.1rem
 $remIcon = 1.4rem
+$remSmall = 0.7rem
 /* -------------- FUNCTION ---------------- */
 fontFace(p_font)
     @font-face
@@ -78,15 +82,14 @@ transition(p_attr)
     -ms-transition p_attr
     -o-transition p_attr
     transition p_attr
-media(p_min = 0px, p_max = 10000px, p_width, p_left)
-    @media all and (min-width: p_min) and (max-width: p_max)
-        header div#top,
-        section, footer
-            width p_width
-        section dl dd
-            margin-left p_left
-        footer a#backtop
-            width 100% - p_width
+responsive(p_index)
+    header div#top,
+    section, footer
+        width: $sizeContentWidthPer[p_index]
+    section dl dd
+        margin-left: $sizeLeftWidth[p_index]
+    footer a#backtop
+        width: 100 - $sizeContentWidthPer[p_index]
 /* ---------------- STYLE ----------------- */
 /* =web font */
 fontFace($fontBody)
@@ -186,7 +189,7 @@ section
     min-height 100%
     width $sizeContentWidthPer[0]
     background $colorBody
-    opacity: 0.8
+    opacity: $opacity
     shadow(0 0 $sizeShadow $colorBlack)
     dl
         margin $sizeHeaderHeight 0 $sizeFooterHeight
@@ -307,43 +310,63 @@ footer
 /* =responsive */
 
 /* responsive */
-@media all and (min-width: 1025px) and (max-width: 1280px) {
-    header div#top,
-    section, footer{ width: 85%; }
-    section dl dd{ margin-left: 180px; }
-    footer a#backtop{ width: 15%; }
-}
-@media all and (min-width: 641px) and (max-width: 1024px) {
-    header div#top,
-    section, footer{ width: 85%; }
-    section dl dd{ margin-left: 80px; }
-    footer a#backtop{ width: 15%; }
-}
-@media all and (min-width: 641px) and (max-width: 900px) {
-    header div#top nav a{ margin: 0; font-size: 12px; }
-    section dl dd a h4{ font-weight: bold; }
-}
-@media all and (max-width: 640px) {
-    header div#top{ position: static; }
-    header div#top nav{ overflow: hidden; position: static; height: 0; width: 100%; margin: 0; background: #1F1C1C; }
-    header div#top nav a{ display: block; height: 40px; line-height: 40px; padding: 0; }
-    header div#top nav a:hover{ background: #999; }
-    header div#top a#list{ display: block; position: absolute; right: 10px; top: 0; height: 40px; width: 40px; background: url(../img/list.png) no-repeat center center; opacity: 0.8; }
-    header div#top a#list:hover{ opacity: 1; }
-    header div#top,
-    section, footer{ width: 95%; }
-    section dl dd{ margin-left: 10px; }
-    section dl dd a h4{ font-size: 20px; }
-    section dl dd a time{ display: none; }
-    section dl dd article{ line-height: 30px; font-size: 12px; }
-    section dl dd article time{ padding: 10px; font-size: 16px; }
-    footer a#backtop{ width: 5%; }
-}
-@media all and (max-width: 320px) {
-    header div#top,
-    section, footer{ min-width: 240px; width: 100%; }
-    footer a#backtop{ width: 30px; }
-}
+@media all and (min-width 1025px) and (max-width 1280px)
+    responsive(1)
+@media all and (min-width 641px) and (max-width 1024px) 
+    responsive(2)
+@media all and (min-width 321) and (max-width 640) 
+    responsive(3)
+@media all and (max-width 320) 
+    responsive(4)
+@media all and (min-width 641px) and (max-width 900px) 
+    header div#top nav a 
+        margin 0
+        font-size $remSmall
+    section dl dd a h4
+        font-weight bold
+@media all and (max-width 640px) 
+    header div#top
+        position static
+        min-width $sizeMinWidth
+        nav 
+            overflow hidden
+            position static
+            height 0
+            width 100%
+            margin 0
+            background $colorHeader
+            a
+                display block
+                height $sizeHeaderHeight
+                line-height $sizeHeaderHeight
+                padding 0
+                &:hover
+                    background $colorGray
+                &#list
+                    display block
+                    position absolute
+                    right $sizeMargin
+                    top 0
+                    height $sizeHeaderHeight
+                    width $sizeHeaderHeight
+                    background url($imgList) no-repeat center center
+                    opacity $opacity
+                    &:hover
+                        opacity 1
+    section dl dd 
+        min-width $sizeMinWidth
+        a 
+            h4 
+                font-size $remTitle
+            time 
+                display none
+        article 
+            font-size $remSmall
+            time 
+                padding $sizeMargin
+    footer a#backtop
+        min-width: 270 - $sizeMinWidth
+
 
 
 
