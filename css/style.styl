@@ -326,8 +326,11 @@ footer
         font-weight bold
 @media all and (max-width: 640px) 
     header div#top
-        position static
         min-width $sizeMinWidth
+        width $sizeContentWidthPer[4]
+        margin $sizeMargin 0
+        h1
+            margin-top $sizeMargin
         nav 
             overflow hidden
             position static
