@@ -59,10 +59,10 @@ footer a#backtop{width:15%}
 }@media all and (min-width: 641px) and (max-width: 1024px){header div#top,section,footer{width:90%}
 section dl dd{margin-left:80px}
 footer a#backtop{width:10%}
-}@media all and (min-width: 321) and (max-width: 640){header div#top,section,footer{width:95%}
+}@media all and (min-width: 321px) and (max-width: 640px){header div#top,section,footer{width:95%}
 section dl dd{margin-left:10px}
 footer a#backtop{width:5%}
-}@media all and (max-width: 320){header div#top,section,footer{width:100%}
+}@media all and (max-width: 320px){header div#top,section,footer{width:100%}
 section dl dd{margin-left:0}
 footer a#backtop{width:0%}
 }@media all and (min-width: 641px) and (max-width: 900px){header div#top nav a{margin:0;font-size:.7rem}
