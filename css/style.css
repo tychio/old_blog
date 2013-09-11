@@ -79,5 +79,6 @@ section dl dd a h4{font-size:1.1rem}
 section dl dd a time{display:none}
 section dl dd article{font-size:.7rem;}
 section dl dd article time{padding:10px}
+footer{bottom:60px;height:60px;font-size:.7rem;}
 footer a#backtop{min-width:30px}
 }

@@ -44,7 +44,7 @@ $sizeNavHeight = 20px
 $sizeCategoryHeight = 30px
 $sizeArticleLineHeight = 30px
 $sizeCodeLineHeight = 20px
-$sizeFooterHeight = 40px
+$sizeFooterHeight = 40px 60px
 $sizeBarHeight = 50px
 $sizeCodeMaxHeight = 500px
 $sizeArticleTop = 70px
@@ -193,7 +193,7 @@ section
     opacity: $opacity
     shadow(0 0 $sizeShadow $colorBlack)
     dl
-        margin $sizeHeaderHeight 0 $sizeFooterHeight
+        margin $sizeHeaderHeight 0 $sizeFooterHeight[0]
         text-align right
         dt
             line-height $sizeCategoryHeight
@@ -283,8 +283,8 @@ footer
     position relative
     z-index $indexFooter
     left 0
-    bottom $sizeFooterHeight
-    height $sizeFooterHeight
+    bottom $sizeFooterHeight[0]
+    height $sizeFooterHeight[0]
     width $sizeContentWidthPer[0]
     a#backtop
         display none
@@ -293,9 +293,9 @@ footer
         z-index $indexBacktop
         right 0
         bottom 0
-        height $sizeFooterHeight
+        height $sizeFooterHeight[0]
         width 100% - $sizeContentWidthPer[0]
-        line-height $sizeFooterHeight + 20px
+        line-height $sizeFooterHeight[0] + 20px
         text-align center
         font-size $remIcon
         background $colorHeader
@@ -369,8 +369,12 @@ footer
             font-size $remSmall
             time 
                 padding $sizePhoneMargin
-    footer a#backtop
-        min-width: 270 - $sizeMinWidth
+    footer
+        bottom $sizeFooterHeight[1]
+        height $sizeFooterHeight[1]
+        font-size $remSmall
+        a#backtop
+            min-width: 270 - $sizeMinWidth
 
 
 
