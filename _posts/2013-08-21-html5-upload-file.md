@@ -202,26 +202,31 @@ progress方法比较特殊，会在上传过程中一直触发，并获取当前
 如此在上传的时候就可以选择多个文件，另外在后端接受数据时，每个属性都变成了一个数组，以PHP为例：
 
     <?php
-        // print_r($_FILES["files"]);
-        for ($i = 0; $i < count($_FILES["files"]["error"]); $i++) { 
-            echo "No.".$i;
-            if ($_FILES["files"]["error"][$i] > 0) {
-                // $_FILES["files"][$i]["error"] is wrong!
-                echo "<p>Error: " . $_FILES["files"]["error"][$i] . "<p/>";
+        header('Content-type: text/json');
+        print_r($_FILES["upload"]["name"]);
+        $rtn = array(
+            "code" => 0,
+            "data" => ''
+        );
+        if ($_FILES["upload"]["error"] > 0) {
+            $rtn["code"] = -1;
+        } else {
+            $rtn["data"] = array(
+                "name" => $_FILES["upload"]["name"],
+                "type" => $_FILES["upload"]["type"],
+                "size" => $_FILES["upload"]["size"],
+                "path" => ""
+            );
+            if (file_exists("img/".$rtn["data"]["name"])) {
+                $rtn["code"] = 1;
             } else {
-                echo "<p>Upload: " . $_FILES["files"]["name"][$i] . "<p/>";
-                echo "<p>Type: " . $_FILES["files"]["type"][$i] . "<p/>";
-                echo "<p>Size: " . ($_FILES["files"]["size"][$i] / 1024) . " Kb<p/>";
-                if (file_exists("img/" . $_FILES["files"]["name"][$i])) {
-                    echo $_FILES["files"]["name"][$i] . " already exists. ";
-                } else {
-                    move_uploaded_file($_FILES["files"]["tmp_name"][$i],
-                        "img/" . $_FILES["files"]["name"][$i]);
-                    echo "Stored in: " . "img/" . $_FILES["files"]["name"][$i];
-                }
-                echo "<hr/>";
+                move_uploaded_file($_FILES["upload"]["tmp_name"],
+                    "img/".$_FILES["upload"]["name"]);
+                $rtn["code"] = 0;
+                $rtn["data"]["path"] = "img/".$rtn["data"]["name"];
             }
         }
+        echo json_encode($rtn);
     ?>
 
 
