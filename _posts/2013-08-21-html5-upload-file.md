@@ -83,36 +83,9 @@ readAsText的result和二进制的显示出来基本是一样的，包括一个�
 
 abort是一个特别的方法，用来打断读取。当图片上传超时或者其他操作需要打断时就可以调用这个接口打断。另外还可以监听abort事件来处理打断后的情况。
 
-##### Event #####
-
-当然，除了abort事件还有许多其他的事件。
-
-1.abort 上传中断时触发。
-2.error 上传出错时触发。
-3.load 文件成功读取完成时触发。
-4.loadend 文件读取结束时无论是否成功触发。
-5.loadstart 文件读取开始时触发。
-6.progress 文件读取过程中每秒触发一次。
-
-###### progress ######
-
-progress方法比较特殊，会在上传过程中一直触发，并获取当前上传的量和总量等数据。
-主要需要用到的有2个数据，loaded已上传的部分和total总量，单位都是b，利用它们算出上传进度就可以显示百分比或设置进度条的宽度，甚至算出上传速度。
-
-另外progress的监听比较特殊，像这样：
-
-    xhr.upload.addEventListener('progress', function (p_event) {
-        var _loaded = p_event.loaded;
-        var _total = p_event.total;
-        var _percent = Math.round(_loaded * 100 / _total);
-        // using percent...
-    }, false);
-
-需要使用xhr.upload的addEventListener方法来监听事件，而不是直接使用xhr。
-
 ### 使用FormData组织表单数据 ###
 
-文件上传基本没有问题了，但是引起了一个新的问题。如果使用HTML5的上传方式那么就必须使用Ajax请求来与服务器通信，但表单中的文件应该如何以参数的方式通过ajax请求传送呢？
+解决了预览的问题，现在该解决上传的正事了，如果使用HTML5的上传方式那么就必须使用Ajax请求来与服务器通信，但表单中的文件应该如何以参数的方式通过ajax请求传送呢？
 
 在DOM API中，Form提供了一个方法FormData，它可以将表单元素的DOM对象直接转换为参数，通过Ajax请求传送。用起来很简单，使用new关键字将DOM对象传入参数即可：
 
@@ -160,6 +133,43 @@ append方法一般可以传入一对键值组合的参数用来添加到表单�
 ---
 
 不过append方法的支持情况就有点不尽人意了，只有Chrome完全支持，Firefox在22以后才支持，其他浏览器均不支持。
+
+### 上传文件 ###
+
+一般来说提交form数据到服务器，上传文件即可交由后端完成。但HTML5需要获取上传进度，就会比较特殊，所以还需要为Ajax请求绑定一些事件来处理不同的情况。
+
+##### Event #####
+
+一般来说，只需要使用XMLHttpRequest的addEventListener方法来绑定事件，像这样
+
+    xhr.addEventListener('load', function (p_event) {
+        // your code...
+    }, false);
+
+除了load事件以外，还有一下一些事件，可以满足上传过程中遇到的各种问题。
+
+1.abort 上传中断时触发。
+2.error 上传出错时触发。
+3.load 文件成功读取完成时触发。
+4.loadend 文件读取结束时无论是否成功触发。
+5.loadstart 文件读取开始时触发。
+6.progress 文件读取过程中每秒触发一次。
+
+###### progress ######
+
+progress方法比较特殊，会在上传过程中一直触发，并获取当前上传的量 `loaded` 和总量等数据 `total` 。
+主要需要用到的有2个数据，loaded已上传的部分和total总量，单位都是b，利用它们算出上传进度就可以显示百分比或设置进度条的宽度，甚至记录进度改变时花费的时间就能算出上传速度。
+
+另外progress的监听比较特殊，像这样：
+
+    xhr.upload.addEventListener('progress', function (p_event) {
+        var _loaded = p_event.loaded;
+        var _total = p_event.total;
+        var _percent = Math.round(_loaded * 100 / _total);
+        // using percent...
+    }, false);
+
+需要使用xhr.upload的addEventListener方法来监听事件，而不是直接使用xhr。
 
 ### INPUT标签 ###
 
@@ -224,3 +234,4 @@ append方法一般可以传入一对键值组合的参数用来添加到表单�
 * [MDN FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData)
 * [Whatwg Interface FormData](http://xhr.spec.whatwg.org/#interface-formdata)
 * [W3C Forms multiple](http://www.w3.org/html/wg/drafts/html/master/forms.html#multipart-form-data)
+* [File upload and Progress events with HTML5](http://www.sagarganatra.com/2011/04/file-upload-and-progress-events-with.html)
