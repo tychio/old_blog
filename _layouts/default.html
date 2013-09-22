@@ -109,6 +109,8 @@
             'go to *page': function (p_page) {
               if (p_page === 'tech') {
                 p_page = 'technology';
+              } else if (p_page === 'home') {
+                p_page = 'index';
               }
               window.location.href = '/' + p_page + '.html';
             }
