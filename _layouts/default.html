@@ -105,6 +105,12 @@
             },
             'down': function () {
               scrollTop(scrollTop() + 400);
+            },
+            'go to *page': function (p_page) {
+              if (p_page === 'tech') {
+                p_page = 'technology';
+              }
+              window.location.href = '/' + p_page + '.html';
             }
           };
           annyang.init(commands);
