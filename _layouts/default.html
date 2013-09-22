@@ -46,7 +46,8 @@
     </footer>
     <script type="text/javascript" src="/js/annyang.js"></script>
     <script>
-      (function () {
+      (function (undefined) {
+        'use strict';
         //nav
         var list = document.getElementById('list');
         list.onclick = function () {
@@ -66,7 +67,7 @@
           if (p_top < 0) {
             p_top = 0;
           }
-          if (p_top && !isNaN(p_top - 0)) {
+          if (p_top !== undefined && !isNaN(p_top - 0)) {
             body.scrollTop = p_top;
           } else {
             return body.scrollTop;
