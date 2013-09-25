@@ -6,7 +6,6 @@
 @font-face{font-family:monaco;src:url("/font/monaco.ttf") format("truetype")}
 article,aside,figcaption,figure,dialog,time,footer,header,nav,section,main{display:block}
 html,body{height:100%;width:100%;padding:0;margin:0;font-family:"微软雅黑" arial "黑体";font-size:100%;line-height:1}
-ol,ul{list-style:none}
 blockquote,q{quotes:none;}
 blockquote:after,q:after,blockquote:before,q:before{content:'';content:none}
 table{border-collapse:collapse;border-spacing:0}
