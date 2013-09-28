@@ -317,7 +317,7 @@ footer
         font-family $fontTitle
         font-size $remSmall
         p
-            height $sizeFooterHeight*.5
+            line-height $sizeFooterHeight*.5
             padding 0 $sizeLinePadding
             margin 0
             span, a
@@ -377,17 +377,19 @@ footer
             opacity $opacity
             &:hover
                 opacity 1
-    main dl dd 
-        min-width $sizeMinWidth
-        a 
-            h4 
-                font-size $remTitle
-            time 
-                display none
-        article 
-            font-size $remSmall
-            time 
-                padding $sizePhoneMargin
+    main dl
+        margin $sizeFooterHeight[0] 0 $sizeFooterHeight[1] 
+        dd 
+            min-width $sizeMinWidth
+            a 
+                h4 
+                    font-size $remTitle
+                time 
+                    display none
+            article 
+                font-size $remSmall
+                time 
+                    padding $sizePhoneMargin
     footer
         bottom $sizeFooterHeight[1]
         height $sizeFooterHeight[1]
