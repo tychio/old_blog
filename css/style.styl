@@ -61,7 +61,7 @@ $sizeShadow = 5px
 $sizeLetterSpace = 1px
 $sizeLinePadding = 8px
 /* =font size */
-$remBar = 1.5rem
+$remBar = 1.2rem 1rem
 $remArticle = 0.9rem
 $remTitle = 1.1rem
 $remIcon = 1.4rem
@@ -231,7 +231,7 @@ main
                     padding-right $sizeBarIndent
                     margin 0
                     line-height $sizeBarHeight
-                    font-size $remBar
+                    font-size $remBar[0]
                     font-weight normal
                     transition(padding $animateTime)
                     &:hover
@@ -383,7 +383,7 @@ footer
             min-width $sizeMinWidth
             a 
                 h4 
-                    font-size $remTitle
+                    font-size $remBar[1]
                 time 
                     display none
             article 
