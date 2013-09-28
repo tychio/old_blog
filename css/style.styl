@@ -173,7 +173,7 @@ header
             position absolute
             top 0
             right 0
-            transition(height 0.4s)
+            transition(height $animateTime)
             a
                 padding-bottom $sizeHeaderHeight - $sizeNavHeight
                 line-height $sizeNavHeight
@@ -193,6 +193,7 @@ main
     background $colorBody
     opacity: $opacity
     shadow(0 0 $sizeShadow $colorBlack)
+    transition(padding $animateTime)
     aside
         position absolute
         top $sizeHeaderHeight

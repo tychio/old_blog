@@ -4,12 +4,15 @@
     var list = document.getElementById('list');
     list.onclick = function () {
         var _nav = document.getElementsByTagName('nav')[0];
+        var _main = document.getElementsByTagName('main')[0];
         if (_nav.offsetHeight == 0) {
             var _link = _nav.getElementsByTagName('a');
             var _height = _link.length * _link[0].offsetHeight;
             _nav.style.height = _height + 'px';
+            _main.style.paddingTop = _height + 'px'
         } else {
             _nav.style.height = '0px';
+            _main.style.paddingTop = '0px';
         }
     };
     //backtop
