@@ -20,7 +20,7 @@ header div#top{position:relative;height:40px;width:80%;}
 header div#top a,header div#top a:link,header div#top a:visited{color:#902020}
 header div#top a:hover{color:#a03030}
 header div#top a h1{display:inline-block;line-height:24px;margin-top:16px;font-size:24px}
-header div#top nav{position:absolute;top:0;right:0;}
+header div#top nav{position:absolute;top:0;right:0;-webkit-transition:height .4s;-moz-transition:height .4s;-ms-transition:height .4s;-o-transition:height .4s;transition:height .4s;}
 header div#top nav a{padding-bottom:20px;line-height:20px;margin:0 5px;}
 header div#top nav a #list{display:none}
 main{position:relative;float:left;overflow:hidden;z-index:10000;top:0;left:0;min-height:100%;width:80%;background:#392020;opacity:.8;-webkit-box-shadow:0 0 5px #000;-moz-box-shadow:0 0 5px #000;-ms-box-shadow:0 0 5px #000;-o-box-shadow:0 0 5px #000;box-shadow:0 0 5px #000;}

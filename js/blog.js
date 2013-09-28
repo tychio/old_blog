@@ -4,9 +4,9 @@
     var list = document.getElementById('list');
     list.onclick = function () {
         var _nav = document.getElementsByTagName('nav')[0];
-        if (_nav.style.height == '0px' || _nav.style.height == 0) {
+        if (_nav.offsetHeight == 0) {
             var _link = _nav.getElementsByTagName('a');
-            var _height = _link.length * _link.offsetHeight;
+            var _height = _link.length * _link[0].offsetHeight;
             _nav.style.height = _height + 'px';
         } else {
             _nav.style.height = '0px';
