@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="auther" content="">
     <link rel="stylesheet" href="/css/highlight.css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script src="/js/highlight.js"></script>
     <script type="text/javascript">
         var auther = document.getElementsByTagName('meta');
@@ -31,20 +31,27 @@
             <a id="list"></a>
         </div>
     </header>
-    <section>{{ content }}
-    </section>
+    <main>{{ content }}
+        <aside>
+        </aside>
+    </main>
     <footer>
         <a href="#" id="backtop">&#94;</a>
         <address>
-              <span>&copy;2013</span>
-              <span>Designed by Tychio</span>
-              <span>|</span>
-              <span>Powered by <a href="http://jekyllrb.com/">Jekyll</a></span>
-              <span></span>
-              <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.zh"><img alt="知识共享许可协议" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>
+            <p>
+                <span>&copy;2013</span>
+                <span>Designed by Tychio</span>
+                <span>|</span>
+                <span>Powered by <a href="http://jekyllrb.com/">Jekyll</a></span>
+            </p>
+            <p>
+                <a href="https://coderwall.com/tychio"><img alt="Endorse Tychio on Coderwall" src="https://api.coderwall.com/tychio/endorsecount.png" /></a>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a>
+            </p>
         </address>    
     </footer>
-    <script type="text/javascript" src="/js/annyang.js"></script>
+    
+    <!-- <script type="text/javascript" src="/js/annyang.js"></script> -->
     <script>
       (function (undefined) {
         'use strict';
@@ -95,7 +102,7 @@
           p_event.preventDefault ? p_event.preventDefault() : event.returnValue = false;
         };
         //annyang
-        if (annyang) {
+        /*if (annyang) {
           var commands = {
             'back up': function () {
               scrollTop(0);
@@ -115,9 +122,9 @@
               window.location.href = '/' + p_page + '.html';
             }
           };
-          // annyang.init(commands);
-          // annyang.start();
-        }
+          annyang.init(commands);
+          annyang.start();
+        }*/
       })();
       //ga
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

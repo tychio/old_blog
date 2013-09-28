@@ -85,10 +85,12 @@ transition(p_attr)
     transition p_attr
 responsive(p_index)
     header div#top,
-    section, footer
-        width: $sizeContentWidthPer[p_index]
-    section dl dd
-        margin-left: $sizeLeftWidth[p_index]
+    main, footer
+        width $sizeContentWidthPer[p_index]
+    main dl dd
+        margin-left $sizeLeftWidth[p_index]
+    main aside
+        width $sizeLeftWidth[p_index]
     footer a#backtop
         width: 100 - $sizeContentWidthPer[p_index]
 /* ---------------- STYLE ----------------- */
@@ -178,7 +180,7 @@ header
                 #list
                     display none
 /* ==body */
-section
+main
     position relative
     float left
     overflow hidden
@@ -190,6 +192,17 @@ section
     background $colorBody
     opacity: $opacity
     shadow(0 0 $sizeShadow $colorBlack)
+    aside
+        position absolute
+        top $sizeHeaderHeight
+        left 0
+        width $sizeLeftWidth[0]
+        text-align left
+        ul
+            list-style none
+            padding 0
+            li
+                padding $sizeBorder 0
     dl
         margin $sizeHeaderHeight 0 $sizeFooterHeight[0]
         text-align right
@@ -298,15 +311,20 @@ footer
         font-size $remIcon
         background $colorHeader
     address
-        padding $sizeLinePadding
         text-align right
         font-family $fontTitle
         font-size $remSmall
-        span, a
-            padding 0 $sizeMargin
-            color $colorText
-        a:link, a:visited
-            color $colorText
+        p
+            height $sizeFooterHeight*.5
+            padding 0 $sizeLinePadding
+            margin 0
+            span, a
+                padding 0 $sizeMargin
+                color $colorText
+                img
+                    height $sizeFooterHeight*.4
+            a:link, a:visited
+                color $colorText
 /* =responsive */
 
 /* responsive */
@@ -322,7 +340,7 @@ footer
     header div#top nav a 
         margin 0
         font-size $remSmall
-    section dl dd a h4
+    main dl dd a h4
         font-weight bold
 @media all and (max-width: 640px) 
     header div#top
@@ -357,7 +375,7 @@ footer
             opacity $opacity
             &:hover
                 opacity 1
-    section dl dd 
+    main dl dd 
         min-width $sizeMinWidth
         a 
             h4 

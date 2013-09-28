@@ -23,49 +23,58 @@ header div#top a h1{display:inline-block;line-height:24px;margin-top:16px;font-s
 header div#top nav{position:absolute;top:0;right:0;}
 header div#top nav a{padding-bottom:20px;line-height:20px;margin:0 5px;}
 header div#top nav a #list{display:none}
-section{position:relative;float:left;overflow:hidden;z-index:10000;top:0;left:0;min-height:100%;width:80%;background:#392020;opacity:.8;-webkit-box-shadow:0 0 5px #000;-moz-box-shadow:0 0 5px #000;-ms-box-shadow:0 0 5px #000;-o-box-shadow:0 0 5px #000;box-shadow:0 0 5px #000;}
-section dl{margin:40px 0 40px;text-align:right;}
-section dl dt{line-height:30px;font-size:30px;padding:70px 5px 5px;border-bottom:2px solid #a99;font-weight:bold;color:#a99;}
-section dl dt h1{font-size:1.1rem}
-section dl dd{min-height:50px;margin-left:300px;}
-section dl dd a time{float:left;display:inline;line-height:50px;font-weight:normal}
-section dl dd a h4{overflow:hidden;padding-right:40px;margin:0;line-height:50px;font-size:1.5rem;font-weight:normal;-webkit-transition:padding .3s;-moz-transition:padding .3s;-ms-transition:padding .3s;-o-transition:padding .3s;transition:padding .3s;}
-section dl dd a h4:hover{padding-right:5px}
-section dl dd article{overflow:hidden;text-align:left;font-size:.9rem;font-family:"微软雅黑" arial "黑体";line-height:30px;letter-spacing:1px;word-wrap:break-word;color:#e7e0e0;}
-section dl dd article time{padding:0 5px;text-align:right;color:#a99}
-section dl dd article img{float:left;margin-right:20px;margin-top:10px;max-width:100%}
-section dl dd article h1{font-size:2rem}
-section dl dd article h2{font-size:1.8rem}
-section dl dd article h3{font-size:1.6rem}
-section dl dd article h4{font-size:1.4rem}
-section dl dd article h5{font-size:1.3rem}
-section dl dd article h6{font-size:1.2rem}
-section dl dd article h1,section dl dd article h2,section dl dd article h3,section dl dd article h4,section dl dd article h5,section dl dd article h6{color:#fff}
-section dl dd article p{padding:5px;margin:0;text-indent:28px}
-section dl dd article a,section dl dd article a:link,section dl dd article a:visited{color:#00a09a;text-decoration:underline}
-section dl dd article a:hover{color:#f03030}
-section dl dd article pre{overflow:auto;max-height:500px;padding:10px 20px;line-height:20px;background:#200;}
-section dl dd article pre code{font-family:monaco}
-section dl dd div.comment{padding-top:20px;margin-top:20px;border-top:2px solid #a99}
+main{position:relative;float:left;overflow:hidden;z-index:10000;top:0;left:0;min-height:100%;width:80%;background:#392020;opacity:.8;-webkit-box-shadow:0 0 5px #000;-moz-box-shadow:0 0 5px #000;-ms-box-shadow:0 0 5px #000;-o-box-shadow:0 0 5px #000;box-shadow:0 0 5px #000;}
+main aside{position:absolute;top:40px;left:0;width:300px;text-align:left;}
+main aside ul{list-style:none;padding:0;}
+main aside ul li{padding:2px 0}
+main dl{margin:40px 0 40px;text-align:right;}
+main dl dt{line-height:30px;font-size:30px;padding:70px 5px 5px;border-bottom:2px solid #a99;font-weight:bold;color:#a99;}
+main dl dt h1{font-size:1.1rem}
+main dl dd{min-height:50px;margin-left:300px;}
+main dl dd a time{float:left;display:inline;line-height:50px;font-weight:normal}
+main dl dd a h4{overflow:hidden;padding-right:40px;margin:0;line-height:50px;font-size:1.5rem;font-weight:normal;-webkit-transition:padding .3s;-moz-transition:padding .3s;-ms-transition:padding .3s;-o-transition:padding .3s;transition:padding .3s;}
+main dl dd a h4:hover{padding-right:5px}
+main dl dd article{overflow:hidden;text-align:left;font-size:.9rem;font-family:"微软雅黑" arial "黑体";line-height:30px;letter-spacing:1px;word-wrap:break-word;color:#e7e0e0;}
+main dl dd article time{padding:0 5px;text-align:right;color:#a99}
+main dl dd article img{float:left;margin-right:20px;margin-top:10px;max-width:100%}
+main dl dd article h1{font-size:2rem}
+main dl dd article h2{font-size:1.8rem}
+main dl dd article h3{font-size:1.6rem}
+main dl dd article h4{font-size:1.4rem}
+main dl dd article h5{font-size:1.3rem}
+main dl dd article h6{font-size:1.2rem}
+main dl dd article h1,main dl dd article h2,main dl dd article h3,main dl dd article h4,main dl dd article h5,main dl dd article h6{color:#fff}
+main dl dd article p{padding:5px;margin:0;text-indent:28px}
+main dl dd article a,main dl dd article a:link,main dl dd article a:visited{color:#00a09a;text-decoration:underline}
+main dl dd article a:hover{color:#f03030}
+main dl dd article pre{overflow:auto;max-height:500px;padding:10px 20px;line-height:20px;background:#200;}
+main dl dd article pre code{font-family:monaco}
+main dl dd div.comment{padding-top:20px;margin-top:20px;border-top:2px solid #a99}
 footer{float:left;position:relative;z-index:11000;left:0;bottom:40px;height:40px;width:80%;}
 footer a#backtop{display:none;float:left;position:fixed;z-index:1001;right:0;bottom:0;height:40px;width:20%;line-height:60px;text-align:center;font-size:1.4rem;background:#1f1c1c}
-footer address{padding:8px;text-align:right;font-family:aftommy;font-size:.7rem;}
-footer address span,footer address a{padding:0 5px;color:#a99}
-footer address a:link,footer address a:visited{color:#a99}
-@media all and (min-width: 1025px) and (max-width: 1280px){header div#top,section,footer{width:85%}
-section dl dd{margin-left:180px}
+footer address{text-align:right;font-family:aftommy;font-size:.7rem;}
+footer address p{height:20px;padding:0 8px;margin:0;}
+footer address p span,footer address p a{padding:0 5px;color:#a99;}
+footer address p span img,footer address p a img{height:16px}
+footer address p a:link,footer address p a:visited{color:#a99}
+@media all and (min-width: 1025px) and (max-width: 1280px){header div#top,main,footer{width:85%}
+main dl dd{margin-left:180px}
+main aside{width:180px}
 footer a#backtop{width:15%}
-}@media all and (min-width: 641px) and (max-width: 1024px){header div#top,section,footer{width:90%}
-section dl dd{margin-left:80px}
+}@media all and (min-width: 641px) and (max-width: 1024px){header div#top,main,footer{width:90%}
+main dl dd{margin-left:80px}
+main aside{width:80px}
 footer a#backtop{width:10%}
-}@media all and (min-width: 321px) and (max-width: 640px){header div#top,section,footer{width:95%}
-section dl dd{margin-left:10px}
+}@media all and (min-width: 321px) and (max-width: 640px){header div#top,main,footer{width:95%}
+main dl dd{margin-left:10px}
+main aside{width:10px}
 footer a#backtop{width:5%}
-}@media all and (max-width: 320px){header div#top,section,footer{width:100%}
-section dl dd{margin-left:0}
+}@media all and (max-width: 320px){header div#top,main,footer{width:100%}
+main dl dd{margin-left:0}
+main aside{width:0}
 footer a#backtop{width:0%}
 }@media all and (min-width: 641px) and (max-width: 900px){header div#top nav a{margin:0;font-size:.7rem}
-section dl dd a h4{font-weight:bold}
+main dl dd a h4{font-weight:bold}
 }@media all and (max-width: 640px){header div#top{min-width:240px;width:100%;margin:10px 0;}
 header div#top a h1{margin-top:10px}
 header div#top nav{overflow:hidden;position:static;height:0;width:100%;margin:0;background:#1f1c1c;}
@@ -73,11 +82,11 @@ header div#top nav a{display:block;height:40px;line-height:40px;padding:0;}
 header div#top nav a:hover{background:#808080}
 header div#top a#list{display:block;position:absolute;right:5px;top:0;height:40px;width:40px;background:url("/img/list.png") no-repeat center center;opacity:.8;}
 header div#top a#list:hover{opacity:1}
-section dl dd{min-width:240px;}
-section dl dd a h4{font-size:1.1rem}
-section dl dd a time{display:none}
-section dl dd article{font-size:.7rem;}
-section dl dd article time{padding:10px}
+main dl dd{min-width:240px;}
+main dl dd a h4{font-size:1.1rem}
+main dl dd a time{display:none}
+main dl dd article{font-size:.7rem;}
+main dl dd article time{padding:10px}
 footer{bottom:60px;height:60px;font-size:.7rem;}
 footer a#backtop{min-width:30px}
 }
