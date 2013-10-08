@@ -93,6 +93,9 @@ responsive(p_index)
         width $sizeLeftWidth[p_index]
     footer a#backtop
         width: 100 - $sizeContentWidthPer[p_index]
+    if p_index > 2
+        header
+            position absolute
 /* ---------------- STYLE ----------------- */
 /* =web font */
 fontFace($fontBody)
@@ -328,8 +331,6 @@ footer
             a:link, a:visited
                 color $colorText
 /* =responsive */
-
-/* responsive */
 @media all and (min-width: 1025px) and (max-width: 1280px)
     responsive(1)
 @media all and (min-width: 641px) and (max-width: 1024px) 

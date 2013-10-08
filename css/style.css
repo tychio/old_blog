@@ -69,10 +69,12 @@ footer a#backtop{width:10%}
 main dl dd{margin-left:10px}
 main aside{width:10px}
 footer a#backtop{width:5%}
+header{position:absolute}
 }@media all and (max-width: 320px){header div#top,main,footer{width:100%}
 main dl dd{margin-left:0}
 main aside{width:0}
 footer a#backtop{width:0%}
+header{position:absolute}
 }@media all and (min-width: 641px) and (max-width: 900px){header div#top nav a{margin:0;font-size:.7rem}
 main dl dd a h4{font-weight:bold}
 }@media all and (max-width: 640px){header div#top{min-width:240px;width:100%;margin:10px 0;}
