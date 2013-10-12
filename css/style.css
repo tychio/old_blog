@@ -11,8 +11,8 @@ blockquote:after,q:after,blockquote:before,q:before{content:'';content:none}
 table{border-collapse:collapse;border-spacing:0}
 input,textarea,select,a,button{outline:none}
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-a,a:link,a:visited{color:#a99;text-decoration:none}
-a:hover{color:#cbb}
+a,a:link,a:visited{color:#d8d3d3;text-decoration:none}
+a:hover{color:#f4f1f1}
 body{background:#333 url("/img/bg.png") repeat;font-family:aviel;color:#e7e0e0}
 hr{border:0;clear:both}
 header{position:fixed;z-index:12000;top:0;left:0;width:100%;background:#1f1c1c;font-family:aftommy;-webkit-box-shadow:0 0 5px #000;-moz-box-shadow:0 0 5px #000;-ms-box-shadow:0 0 5px #000;-o-box-shadow:0 0 5px #000;box-shadow:0 0 5px #000;}
@@ -28,14 +28,14 @@ main aside{position:absolute;top:40px;left:0;width:300px;text-align:left;}
 main aside ul{list-style:none;padding:0;}
 main aside ul li{padding:2px 0}
 main dl{margin:40px 0 40px;text-align:right;}
-main dl dt{line-height:30px;font-size:30px;padding:70px 5px 5px;border-bottom:2px solid #a99;font-weight:bold;color:#a99;}
+main dl dt{line-height:30px;font-size:30px;padding:70px 5px 5px;border-bottom:2px solid #d8d3d3;font-weight:bold;color:#d8d3d3;}
 main dl dt h1{font-size:1.1rem}
 main dl dd{min-height:50px;margin-left:300px;}
 main dl dd a time{float:left;display:inline;line-height:50px;font-weight:normal}
 main dl dd a h4{overflow:hidden;padding-right:40px;margin:0;line-height:50px;font-size:1.2rem;font-weight:normal;-webkit-transition:padding .3s;-moz-transition:padding .3s;-ms-transition:padding .3s;-o-transition:padding .3s;transition:padding .3s;}
 main dl dd a h4:hover{padding-right:5px}
 main dl dd article{overflow:hidden;text-align:left;font-size:.9rem;font-family:"微软雅黑" arial "黑体";line-height:30px;letter-spacing:1px;word-wrap:break-word;color:#e7e0e0;}
-main dl dd article time{padding:0 5px;text-align:right;color:#a99}
+main dl dd article time{padding:0 5px;text-align:right;color:#d8d3d3}
 main dl dd article img{float:left;margin-right:20px;margin-top:10px;max-width:100%}
 main dl dd article h1{font-size:2rem}
 main dl dd article h2{font-size:1.8rem}
@@ -50,14 +50,14 @@ main dl dd article a:hover{color:#f03030}
 main dl dd article pre{overflow:auto;max-height:500px;padding:10px 20px;line-height:20px;background:#200;}
 main dl dd article pre code{font-family:monaco}
 main dl dd article blockquote{background:#4d3c3c;border-left:2px solid #00807b;margin-left:0;padding-left:20px}
-main dl dd div.comment{padding-top:20px;margin-top:20px;border-top:2px solid #a99}
+main dl dd div.comment{padding-top:20px;margin-top:20px;border-top:2px solid #d8d3d3}
 footer{float:left;position:relative;z-index:11000;left:0;bottom:40px;height:40px;width:80%;}
 footer a#backtop{display:none;float:left;position:fixed;z-index:1001;right:0;bottom:0;height:40px;width:20%;line-height:60px;text-align:center;font-size:1.4rem;background:#1f1c1c}
 footer address{text-align:right;font-family:aftommy;font-size:.7rem;}
 footer address p{line-height:20px;padding:0 8px;margin:0;}
-footer address p span,footer address p a{padding:0 5px;color:#a99;}
+footer address p span,footer address p a{padding:0 5px;color:#d8d3d3;}
 footer address p span img,footer address p a img{height:16px}
-footer address p a:link,footer address p a:visited{color:#a99}
+footer address p a:link,footer address p a:visited{color:#d8d3d3}
 @media all and (min-width: 1025px) and (max-width: 1280px){header div#top,main,footer{width:85%}
 main dl dd{margin-left:180px}
 main aside{width:180px}
