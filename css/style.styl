@@ -284,11 +284,12 @@ main
                 pre
                     overflow auto
                     max-height $sizeCodeMaxHeight
-                    padding $sizeTextTop $sizeTextRight
+                    padding $sizeTextTop 0
                     line-height $sizeCodeLineHeight
+                code
+                    padding 0 $sizeTextRight
                     background $colorCode
-                    code
-                        font-family $fontCode
+                    font-family $fontCode
                 blockquote
                     background darken($colorArticle, 70%)
                     border-left $sizeBorder solid darken($colorLink, 20%)

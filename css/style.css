@@ -47,8 +47,8 @@ main dl dd article h1,main dl dd article h2,main dl dd article h3,main dl dd art
 main dl dd article p{padding:5px;margin:0;text-indent:28px}
 main dl dd article a,main dl dd article a:link,main dl dd article a:visited{color:#00a09a;text-decoration:underline}
 main dl dd article a:hover{color:#f03030}
-main dl dd article pre{overflow:auto;max-height:500px;padding:10px 20px;line-height:20px;background:#200;}
-main dl dd article pre code{font-family:monaco}
+main dl dd article pre{overflow:auto;max-height:500px;padding:10px 0;line-height:20px}
+main dl dd article code{padding:0 20px;background:#200;font-family:monaco}
 main dl dd article blockquote{background:#4d3c3c;border-left:2px solid #00807b;margin-left:0;padding-left:20px}
 main dl dd div.comment{padding-top:20px;margin-top:20px;border-top:2px solid #d8d3d3}
 footer{float:left;position:relative;z-index:11000;left:0;bottom:40px;height:40px;width:80%;}
