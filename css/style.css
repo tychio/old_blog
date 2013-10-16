@@ -1,7 +1,7 @@
 /* Tychio [code@tychio.net]
  * 2013.9.10
  */
-@font-face{font-family:roboto;src:url("/font/roboto.ttf") format("truetype")}
+@font-face{font-family:larabie;src:url("/font/larabie.ttf") format("truetype")}
 @font-face{font-family:aftommy;src:url("/font/aftommy.ttf") format("truetype")}
 @font-face{font-family:monaco;src:url("/font/monaco.ttf") format("truetype")}
 article,aside,figcaption,figure,dialog,time,footer,header,nav,section,main{display:block}
@@ -13,7 +13,7 @@ input,textarea,select,a,button{outline:none}
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
 a,a:link,a:visited{color:#d8d3d3;text-decoration:none}
 a:hover{color:#f4f1f1}
-body{background:#333 url("/img/bg.png") repeat;font-family:roboto;color:#e7e0e0}
+body{background:#333 url("/img/bg.png") repeat;font-family:larabie;color:#e7e0e0}
 hr{border:0;clear:both}
 header{position:fixed;z-index:12000;top:0;left:0;width:100%;background:#1f1c1c;font-family:aftommy;-webkit-box-shadow:0 0 5px #000;-moz-box-shadow:0 0 5px #000;-ms-box-shadow:0 0 5px #000;-o-box-shadow:0 0 5px #000;box-shadow:0 0 5px #000;}
 header div#top{position:relative;height:40px;width:80%;}
