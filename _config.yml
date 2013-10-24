@@ -4,6 +4,7 @@ lsi:         false
 pygments:    true
 markdown:    rdiscount
 permalink:   date
+excerpt_separator: #
 rdiscount:
   extensions: [smart]
 redcarpet:
