@@ -5,13 +5,13 @@ title: Tychio's Blog
 
 <dl>
     <dt>All Posts</dt>
-{% for post in site.posts %}
+{% for post in site.posts limit 5 %}
     <dd>
         <a href="{{ post.url }}">
             <time>{{ post.date | date_to_string }}</time>
             <h4>{{ post.title }}</h4>
-            <p>{{ post.excerpt }}</p>
         </a>
+        <article>{{ post.excerpt }}</article>
     </dd>
 {% endfor %}
 </dl>
