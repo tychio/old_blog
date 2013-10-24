@@ -11,6 +11,7 @@ title: Tychio's Blog
             <time>{{ post.date | date_to_string }}</time>
             <h4>{{ post.title }}</h4>
         </a>
+        <article class="excerpt">{{ post.excerpt }}</article>
     </dd>
 {% endfor %}
 </dl>
