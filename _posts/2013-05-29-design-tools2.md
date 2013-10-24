@@ -14,7 +14,7 @@ category: Design
 [![Preloaders](http://onlinegenerator.net/images/preloaders.png)](http://preloaders.net/)
 
 Online Generator包括好几个很棒的工具，首先是Preloaders，它用于制作loading图片，它的图片种类很齐全，还有大量的3D图片，最重要的是它可以任意改变尺寸，当然也包括颜色，动画。动画可以选择方向频率等等，功能十分强大，基本上只要你能找到喜欢的图案，它就一定能制作出你想要的loading图片。
-
+<!-- more -->
 [![Iconizer](http://onlinegenerator.net/images/iconizer.png)](http://iconizer.net/)
 
 Iconizer是一个icon搜索制作工具，只要输入关键字，比如home，就会出现海量的类似图标，然后选一个就可以继续定制颜色尺寸等相关信息，然后下载你要的图标或者先存起来，之后再打包下载。

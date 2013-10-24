@@ -6,7 +6,7 @@ category: Tech
 ---
 
 所谓的mouselook其实就是第一人称视角，而[pointerlock技术](http://www.w3.org/TR/pointerlock/ "pointerlock技术")（其实和第一人称没什么关系,只是说这个技术可以用来实现第一人称）其核心就是让鼠标隐藏并且无论怎么拖动鼠标，鼠标指针都不会跑出目标区域。
-
+<!-- more -->
 用法：
 
 * requestPointerLock 是最主要的方法，进入pointerlock模式，在chrome会出现像fullscreen一样的提示，是否隐藏鼠标，按esc键可以退出该模式。需要加上浏览器前缀，moz或者webkit，像这样element.webkitRequestPointerLock()。不过在firefox中测试用不了，具体还没来得及调，不知道什么情况。

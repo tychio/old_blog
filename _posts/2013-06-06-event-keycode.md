@@ -24,7 +24,7 @@ category: Tech
     }
 
 当然，enter还需要绑定到一个键盘事件中，键盘事件有三种，我以前倾向于使用keyup [1]，这样的体验比较好，符合人的习惯，在松开按键的时候生效。不过有时候keydown也是很棒的选择，比如说用户希望可以快速触发时，比如游戏中，我还记得WOW有一款插件是专门修改为按下触发技能的。
-
+<!-- more -->
     document.getElementById('enter_input').onkeyup = enter;
 
 ---
