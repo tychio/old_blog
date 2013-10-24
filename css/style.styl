@@ -48,7 +48,7 @@ $sizeFooterHeight = 40px 60px
 $sizeBarHeight = 50px
 $sizeCodeMaxHeight = 500px
 $sizeArticleTop = 70px
-$sizeCommentTop = 40px
+$sizeSectionTop = 40px
 $sizeTextRight = 20px
 $sizeTextTop = 10px
 $sizeBarIndent = 40px
@@ -61,7 +61,7 @@ $sizeShadow = 5px
 $sizeLetterSpace = 1px
 $sizeLinePadding = 8px
 /* =font size */
-$remBar = 1.2rem 1rem
+$remBar = 1.5rem 1rem
 $remArticle = 0.9rem
 $remTitle = 1.1rem
 $remIcon = 1.4rem
@@ -223,6 +223,9 @@ main
         dd
             min-height $sizeBarHeight
             margin-left $sizeLeftWidth[0]
+            margin-bottom $sizeSectionTop
+            border-bottom $sizeBorder solid $colorText
+            &:last-child border 0
             a
                 time, label
                     float left
@@ -239,10 +242,6 @@ main
                     transition(padding $animateTime)
                     &:hover
                         padding-right: $sizeMargin
-                p
-                    padding 0 $sizeBarIndent
-                    margin 0
-                    line-height $sizeCodeLineHeight
             article
                 overflow hidden
                 text-align left
@@ -252,6 +251,11 @@ main
                 letter-spacing $sizeLetterSpace
                 word-wrap break-word
                 color $colorArticle
+                &.excerpt
+                    img
+                        max-width $sizeImgMaxWidth*.5
+                    h1,h2,h3,h4,h5,h6
+                        font-size 1rem
                 time
                     padding 0 $sizeMargin
                     text-align right
@@ -300,8 +304,8 @@ main
                     margin-left 0
                     padding-left 20px
             div.comment
-                padding-top $sizeCommentTop*0.5
-                margin-top $sizeCommentTop*0.5
+                padding-top $sizeSectionTop*0.5
+                margin-top $sizeSectionTop*0.5
                 border-top $sizeBorder solid $colorText
 /* =footer */
 footer
