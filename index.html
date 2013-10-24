@@ -10,6 +10,7 @@ title: Tychio's Blog
         <a href="{{ post.url }}">
             <time>{{ post.date | date_to_string }}</time>
             <h4>{{ post.title }}</h4>
+            <p>{{ post.excerpt }}</p>
         </a>
     </dd>
 {% endfor %}
