@@ -243,7 +243,7 @@ for $rowList, $row in $pos
 
 ##### Grunt插件 #####
 
-不过说话处理文件，Grunt还是我的最爱，尤其Stylus是由Javascript实现，在Nodejs中自然是得天独厚。npmjs上有许多用来处理Stylus的插件，下面简单介绍一下Grunt的官方Stylus插件[grunt-contrib-stylus](https://npmjs.org/package/grunt-contrib-stylus)。先来看看最简单的配置方法：
+不过说到处理文件，Grunt还是我的最爱，尤其Stylus是由Javascript实现，在Nodejs中自然是得天独厚。npmjs上有许多用来处理Stylus的插件，下面简单介绍一下Grunt的官方Stylus插件[grunt-contrib-stylus](https://npmjs.org/package/grunt-contrib-stylus)。先来看看最简单的配置方法：
 
 ```
 stylus: {
