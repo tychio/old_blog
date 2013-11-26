@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 阅读Refactoring
+title: 《重构》Refactoring
 tags: [software,SE,软件工程,重构]
-category: Book
+category: Read
 ---
 
 ![Refactoring](/img/post/refactoring.jpg)以前上学的时候其实大概读过这本书，但是那时没有什么项目经验，对于重构还很难理解其意义，最近因为又读了一遍这本书，发现确实是很棒的一本书，虽然现在写javascript，而这本书是以java为基础的，但仍然有很多值得参考的地方，尤其是一些常见的重构手法，让人看的时就会觉得对对对，确实经常这么干，比如Extract method还有Replace array with object等等都可以应用到其他环境中。

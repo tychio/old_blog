@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 阅读Programming Pearls
+title: 《编程珠玑》Programming Pearls
 tags: [software,SE,program,code,软件工程,编程珠玑]
-category: Book
+category: Read
 ---
 
 ![Programming Pearls](/img/post/programmingpearls.jpg)&#12298;编程珠玑&#12299;这本书读完感觉很诡异，在读的过程中感觉很有收获，但是却说不清从书中获得了什么，好像什么也没读懂。说实话，很难对这本书归类，有时它告诉你的是实际操作的性能问题，有时又在讲算法或者数据结构。不过确切的说，它告诉我们的是一种无招胜有招的境界。无论是实际操作、算法还是数据结构都是在为项目服务的，我们的目的只有一个，那就是完成项目。
