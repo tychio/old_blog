@@ -36,7 +36,7 @@ main dl dd a time,main dl dd a label{float:left;display:inline;line-height:50px;
 main dl dd a h4{overflow:hidden;padding-right:40px;margin:0;line-height:50px;font-size:1.5rem;font-weight:normal;-webkit-transition:padding .3s;-moz-transition:padding .3s;-ms-transition:padding .3s;-o-transition:padding .3s;transition:padding .3s;}
 main dl dd a h4:hover{padding-right:5px}
 main dl dd article{overflow:hidden;text-align:left;font-size:.9rem;font-family:"微软雅黑" arial "黑体";line-height:30px;letter-spacing:1px;word-wrap:break-word;color:#e7e0e0;}
-main dl dd article.excerpt img{max-width:20%}
+main dl dd article.excerpt img{max-width:30%}
 main dl dd article.excerpt h1,main dl dd article.excerpt h2,main dl dd article.excerpt h3,main dl dd article.excerpt h4,main dl dd article.excerpt h5,main dl dd article.excerpt h6{font-size:1rem}
 main dl dd article time{padding:0 5px;text-align:right;color:#d8d3d3}
 main dl dd article img{float:left;margin-right:20px;margin-top:10px;max-width:100%}
@@ -94,7 +94,7 @@ main dl dd a h4{font-size:1rem}
 main dl dd a time{display:none}
 main dl dd article{font-size:.7rem;}
 main dl dd article time{padding:10px}
-main dl dd article.excerpt img{max-width:80%;width:80%;margin:0 10%}
+main dl dd article.excerpt img{display:block;float:none;max-width:260px;width:260px;margin:0 auto}
 footer{bottom:60px;height:60px;font-size:.7rem;}
 footer a#backtop{min-width:30px}
 }

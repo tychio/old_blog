@@ -36,7 +36,7 @@ $imgList = $imgBase + "list.png"
 /* =size */
 $sizeContentWidthPer = 80% 85% 90% 95% 100%
 $sizeLeftWidth = 300px 180px 80px 10px 0
-$sizeImgMaxWidth = 100%
+$sizeImgMaxWidth = 100% 260px 30%
 $sizeMinWidth = 240px
 $sizeHeaderHeight = 40px
 $sizeTitleHeight = 24px
@@ -256,7 +256,7 @@ main
                 color $colorArticle
                 &.excerpt
                     img
-                        max-width $sizeImgMaxWidth*.2
+                        max-width $sizeImgMaxWidth[2]
                     h1,h2,h3,h4,h5,h6
                         font-size 1rem
                 time
@@ -267,7 +267,7 @@ main
                     float left
                     margin-right $sizeTextRight
                     margin-top $sizeTextTop
-                    max-width $sizeImgMaxWidth
+                    max-width $sizeImgMaxWidth[0]
                 h1
                     font-size 2rem
                 h2
@@ -410,9 +410,11 @@ footer
                     padding $sizePhoneMargin
                 &.excerpt
                     img
-                        max-width $sizeImgMaxWidth*.8
-                        width $sizeImgMaxWidth*.8
-                        margin 0 $sizeImgMaxWidth*.1
+                        display block
+                        float none
+                        max-width $sizeImgMaxWidth[1]
+                        width $sizeImgMaxWidth[1]
+                        margin 0 auto
     footer
         bottom $sizeFooterHeight[1]
         height $sizeFooterHeight[1]
