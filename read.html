@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Tychio's Blog
+title: Read - Tychlog
 ---
 
 <dl>
     <dt>Book</dt>
-{% for post in site.categories.book %}
+{% for post in site.categories.read %}
     <dd>
         <a href="{{ post.url }}">
             <time>{{ post.date | date_to_string }}</time>
