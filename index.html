@@ -5,7 +5,7 @@ title: Tychio's Blog
 
 <dl>
     <dt>All Posts (<a href="archive.html">{{ paginator.total_posts }}</a>)</dt>
-{% for post in site.posts limit 5 %}
+{% for post in paginator.posts %}
     <dd>
         <a href="{{ post.url }}">
             <time>{{ post.date | date_to_string }}</time>
@@ -15,7 +15,7 @@ title: Tychio's Blog
     </dd>
 {% endfor %}
     <dd>
-        <a href="archive.html">
+        <a href="/archive.html">
             <h4>More...</h4>
         </a>
     </dd>
