@@ -94,6 +94,7 @@ main dl dd a h4{font-size:1rem}
 main dl dd a time{display:none}
 main dl dd article{font-size:.7rem;}
 main dl dd article time{padding:10px}
+main dl dd article.excerpt img{max-width:80%;width:80%;margin:0 10%}
 footer{bottom:60px;height:60px;font-size:.7rem;}
 footer a#backtop{min-width:30px}
 }
