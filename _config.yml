@@ -4,6 +4,7 @@ lsi:         false
 pygments:    true
 markdown:    rdiscount
 permalink:   date
+paginate: 5
 excerpt_separator: <!-- more -->
 rdiscount:
   extensions: [smart]

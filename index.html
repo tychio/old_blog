@@ -4,7 +4,7 @@ title: Tychio's Blog
 ---
 
 <dl>
-    <dt>All Posts</dt>
+    <dt>All Posts (<a href="archive.html">{{ paginator.total_posts }}</a>)</dt>
 {% for post in site.posts limit 5 %}
     <dd>
         <a href="{{ post.url }}">
@@ -14,4 +14,9 @@ title: Tychio's Blog
         <article class="excerpt">{{ post.excerpt }}</article>
     </dd>
 {% endfor %}
+    <dd>
+        <a href="archive.html">
+            <h4>More...</h4>
+        </a>
+    </dd>
 </dl>
