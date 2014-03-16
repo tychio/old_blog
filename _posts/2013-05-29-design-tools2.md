@@ -2,7 +2,7 @@
 layout: post
 title: 推荐一些图片工具
 tags: [tool,recommend,image,图片,工具]
-category: Design
+category: Tech
 ---
 
 上周介绍了几种配色工具，这次要介绍的是一些图片和图标的生成工具。

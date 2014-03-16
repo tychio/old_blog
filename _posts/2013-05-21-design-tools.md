@@ -2,7 +2,7 @@
 layout: post
 title: 推荐几个配色工具
 tags: [tool,recommend,color,颜色,调色,配色]
-category: Design
+category: Tech
 ---
 
 作为一名前端工程师，或多或少都会接触到设计，虽然我很讨厌有人把前端和美工等同，但是我仍然很喜欢设计，这是一个Web必不可少的环节。
