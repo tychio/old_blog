@@ -51,30 +51,6 @@
         }, 50);
         p_event.preventDefault ? p_event.preventDefault() : event.returnValue =   false;
     };
-    //annyang
-    /*if (annyang) {
-      var commands = {
-        'back up': function () {
-          scrollTop(0);
-        },
-        'up': function () {
-          scrollTop(scrollTop() - 400);
-        },
-        'down': function () {
-          scrollTop(scrollTop() + 400);
-        },
-        'go to *page': function (p_page) {
-          if (p_page === 'tech') {
-            p_page = 'technology';
-          } else if (p_page === 'home') {
-            p_page = 'index';
-          }
-          window.location.href = '/' + p_page + '.html';
-        }
-      };
-      annyang.init(commands);
-      annyang.start();
-    }*/
 })();
 //ga
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
