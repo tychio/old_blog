@@ -95,14 +95,14 @@ transition(p_attr)
     -o-transition p_attr
     transition p_attr
 responsive(p_index)
-    header div#top,
+    header #top,
     main, footer
         width $sizeContentWidthPer[p_index]
     main dl dd
         margin-left $sizeLeftWidth[p_index]
     main aside
         width $sizeLeftWidth[p_index]
-    footer a#backtop
+    footer #backtop
         width: 100 - $sizeContentWidthPer[p_index]
     if p_index > 2
         header
@@ -170,31 +170,31 @@ header
     background $colorHeader
     font-family $fontTitle
     shadow(0 0 $sizeShadow $colorBlack)
-    div#top
-        position: relative
-        height: $sizeHeaderHeight
-        width: $sizeContentWidthPer[0]
+#top
+    position: relative
+    height: $sizeHeaderHeight
+    width: $sizeContentWidthPer[0]
+    a
+        &, &:link, &:visited
+            color $colorTitleLink
+        &:hover
+            color $colorTitleLinkHover
+        h1
+            display inline-block
+            line-height $sizeTitleHeight
+            margin-top $sizeHeaderHeight - $sizeTitleHeight
+            font-size $sizeTitleHeight
+    nav
+        position absolute
+        top 0
+        right 0
+        transition(height $animateTime)
         a
-            &, &:link, &:visited
-                color $colorTitleLink
-            &:hover
-                color $colorTitleLinkHover
-            h1
-                display inline-block
-                line-height $sizeTitleHeight
-                margin-top $sizeHeaderHeight - $sizeTitleHeight
-                font-size $sizeTitleHeight
-        nav
-            position absolute
-            top 0
-            right 0
-            transition(height $animateTime)
-            a
-                padding-bottom $sizeHeaderHeight - $sizeNavHeight
-                line-height $sizeNavHeight
-                margin 0 $sizeMargin
-                #list
-                    display none
+            padding-bottom $sizeHeaderHeight - $sizeNavHeight
+            line-height $sizeNavHeight
+            margin 0 $sizeMargin
+            #list
+                display none
 /* ==body */
 main
     position relative
@@ -319,7 +319,7 @@ main
                     border-left $sizeBorder solid darken($colorLink, 20%)
                     margin-left 0
                     padding-left 20px
-            div.comment
+            .comment
                 padding-top $sizeSectionTop*0.5
                 margin-top $sizeSectionTop*0.5
                 border-top $sizeBorder solid $colorText
@@ -332,7 +332,7 @@ footer
     bottom $sizeFooterHeight[0]
     height $sizeFooterHeight[0]
     width $sizeContentWidthPer[0]
-    a#backtop
+    #backtop
         display none
         float left
         position fixed
@@ -370,13 +370,13 @@ footer
 @media all and (max-width: 320px) 
     responsive(4)
 @media all and (min-width: 641px) and (max-width: 900px) 
-    header div#top nav a 
+    header #top nav a 
         margin 0
         font-size $remSmall
     main dl dd a h4
         font-weight bold
 @media all and (max-width: 640px) 
-    header div#top
+    header #top
         min-width $sizeMinWidth
         width $sizeContentWidthPer[4]
         margin $sizePhoneMargin 0
@@ -397,7 +397,7 @@ footer
                 padding 0
                 &:hover
                     background $colorGray
-        a#list
+        #list
             display block
             position absolute
             right $sizeMargin
@@ -432,7 +432,7 @@ footer
         bottom $sizeFooterHeight[1]
         height $sizeFooterHeight[1]
         font-size $remSmall
-        a#backtop
+        #backtop
             min-width: 270 - $sizeMinWidth
 
 
