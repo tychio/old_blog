@@ -207,8 +207,133 @@ OOCSS即面向对象的CSS，这里对象指的是页面中的元素对象，与
 }
 ```
 
-这样就可以在页面中随时使用主要的设计元素了，而且需要修改时也非常的简单，不用担心有什么地方漏掉。另外我将背景与边框分为了两个class，原因还是设计逻辑应该放在HTML，背景与边框并不是一定同时出现的，两者的关系应该由HTML决定，即使设计上逻辑决定了两者的决定相与，在实现时也有可能因为HTML结构而放在两个不同的元素上。
+这样就可以在页面中随时使用主要的设计元素了，而且需要修改时也非常的简单，不用担心有什么地方漏掉。另外我将背景与边框分为了两个class，原因还是设计逻辑应该放在HTML，背景与边框并不是一定同时出现的，两者的关系应该由HTML决定，即使设计上逻辑决定了两者的绑定，在实现时也有可能因为HTML结构而放在两个不同的元素上。
 
+OOCSS强调class，将每组样式写成一个class方便HTML中使用，众多class组合起来能千变万化组成一个对象。所以如果是想一劳永逸的写一套UI作为开发时使用的样式，我建议使用OOCSS来进行开发。但它也有缺点，过多的将设计逻辑放在HTML中，极大的自由化了页面开发时的选择，如果写HTML的开发者不能很好的理解整套CSS的结构，较易在HTML中造成class混乱。
+
+###### DRY CSS
+
+DRY就是Donot repeat youself 不要重复。但其实这个名字有点无趣，哪个理论不是消除重复呢，但如何消除才是意义所在。总的来说我认为DRYCSS与OOCSS是两个极端，所以我将会以对比的方式来讲讲DRYCSS的内容。使用DRYCSS很简单，三步。
+
+***1. 分组可复用属性***
+
+DRYCSS跟OOCSS有点像，第一步都是分组样式，消除重复，但就像我说的，关键在于如何。OOCSS将样式集合看作对象，所以分组的逻辑是，某个元素本身应该是什么样的，而DRYCSS则关注重复，无论什么逻辑，只要是一样的就应该只有一个。其中粒度是值得思考的问题，如果太细，那只会成为一行样式一组这样无意义的情况，如果太粗，又会变成毫无复用性的庞然大物。我认为可以将一些有关联的缺了A时B就没作用的样式分为一组，还可以将某些惯用搭配分为一组。下面举个例子：
+
+```
+{
+	float: left;
+	position: absolute;
+	display: inline-block;
+	overflow: hidden;
+}
+```
+
+这是一组样式，可用来触发[Block formatting Contexts（块级格式化上下文）](http://kayosite.com/block-formatting-contexts-in-detail.html)，如此就完成了一组样式。接着再写2组关于尺寸的样式吧。
+
+```
+{
+	width: 960px;
+	height: auto;
+}
+{
+	width: 720px;
+	height: 600px;
+}
+{
+	width: 220px;
+	height: 600px;
+}
+```
+这是三组样式用来布局，将页面分为左右两部分。
+
+***2. 按逻辑为分组命名***
+
+接着我们来为其命名，其实就是添加一个ID选择器，但是我们并不真的使用它，而是用来标示该组样式。下面就来命名上面所分组的样式。
+
+```
+#BLOCK_FORMATTING_CONTEXTS
+{
+	float: left;
+	position: absolute;
+	display: inline-block;
+	overflow: hidden;
+}
+
+#LAYOUT_FULL
+{
+	width: 960px;
+	height: auto;
+}
+
+#LAYOUT_CONTENT
+{
+	width: 720px;
+	height: 600px;
+}
+
+#LAYOUT_SIDEBAR
+{
+	width: 220px;
+	height: 600px;
+}
+```
+
+这一步类似OOCSS的class，它决定了每组样式所代表的逻辑或用途，然而DRYCSS多了最关键的下一步，也是与OOCSS本质区别。
+
+***3. 为各个分组添加选择器***
+
+DRYCSS在使用时和OOCSS有着巨大的差异，在CSS文件中写入HTML中的class选择器来使用这些分组后的样式，而不是直接在HTML中使用CSS文件中写好的class。
+
+```
+.header,
+.container,
+.content-right,
+.content-left,
+#BLOCK_FORMATTING_CONTEXTS
+{
+	float: left;
+	position: absolute;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.header,
+.navigator,
+.container,
+#LAYOUT_FULL
+{
+	width: 960px;
+	height: auto;
+}
+
+
+.content-right,
+.section,
+#LAYOUT_CONTENT
+{
+	width: 720px;
+	height: 600px;
+}
+
+.content-right,
+.sidebar,
+.profile,
+#LAYOUT_SIDEBAR
+{
+	width: 220px;
+	height: 600px;
+}
+```
+
+可以看到，使用DRYCSS时，在HTML中所写的class将会非常表意，元素本身是什么用来做什么，就使用其意义的class命名，而且基本上是一个元素对应一个class，HTML将变的简单明了。另外DRYCSS也是相对于OOCSS的一种逆向思维，这才是最有趣的地方。在开发中，不应该像OOCSS那样思考如何应对未来假象的HTML，而是仅仅思考CSS本身。
+
+总的来说，OOCSS适合开发CSS框架或整套UI模版，是自外向内的UI开发方式；而DRYCSS则适合拯救混沌的HTML，或者加强HTML的结构性和表意性，是自内向外的UI开发方式。这里的内指地是HTML结构，外指地是CSS样式。
+
+###### SMACSS
+
+这是一个相对繁杂的CSS理论，分为Base、Layout、Module、Status和Theme共五个部分。不过它的核心思想仍然和OOCSS类似，鼓励使用class。
+
+***1. Base 基本属性***
 
 OOCSS
 	分离皮肤和结构
