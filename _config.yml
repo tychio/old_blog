@@ -1,6 +1,6 @@
 destination: ./_site
 lsi:         false
-highlighter:    true
+pygments:    true
 markdown:    rdiscount
 permalink:   date
 paginate: 5
