@@ -1,3 +1,6 @@
+---
+layout: none
+---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
@@ -8,16 +11,16 @@
  <id>http://www.tychio.net/</id>
  <author>
    <name>Tyrant Zhang</name>
-   <email>z@zzz.gs</email>
+   <email>code@tychio.net</email>
  </author>
 
  {% for post in site.posts %}
  <entry>
-   <title>{{ post.title }}</title>
+   <title>{{ post.title | xml_escape }}</title>
    <link href="http://www.tychio.net{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>http://www.tychio.net{{ post.id }}</id>
-   <content type="html">{{ post.excerpt }}</content>
+   <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
  
