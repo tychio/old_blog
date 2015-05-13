@@ -10,7 +10,7 @@ layout: none
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>http://www.tychio.net/</id>
  <author>
-   <name>Tyrant Zhang</name>
+   <name>Zhengzheng Zhang</name>
    <email>code@tychio.net</email>
  </author>
 
