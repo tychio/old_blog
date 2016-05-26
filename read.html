@@ -1,11 +1,12 @@
 ---
 layout: default
 title: Read - Tychlog
+permalink: /read/
 ---
 
 <dl>
     <dt>Read</dt>
-{% for post in site.categories.read %}
+{% for post in site.categories.Read %}
     <dd>
         <a href="{{ post.url }}">
             <time>{{ post.date | date_to_string }}</time>

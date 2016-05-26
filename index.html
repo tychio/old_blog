@@ -1,11 +1,10 @@
 ---
 layout: default
-title: Tychio's Blog
 ---
 
 <dl>
     <dt>All Posts</dt>
-{% for post in paginator.posts %}
+{% for post in site.posts %}
     <dd>
         <a href="{{ post.url }}">
             <time>{{ post.date | date_to_string }}</time>
@@ -15,7 +14,7 @@ title: Tychio's Blog
     </dd>
 {% endfor %}
     <dd>
-        <a href="/archive.html">
+        <a href="/archive">
             <h4>More...</h4>
         </a>
     </dd>

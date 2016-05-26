@@ -1,57 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <meta name="description" content="Tychio's Blog - Web前端开发与设计">
-    <meta name="keywords" content="Tychio Front-End 前端 设计 Javascript HTML CSS 互联网 浏览器 技术 IT">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta name="auther" content="">
-    <link rel="stylesheet" href="/css/highlight.css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <script src="/js/highlight.js"></script>
-    <script type="text/javascript">
-        var auther = document.getElementsByTagName('meta');
-        auther = auther[auther.length - 1];
-        auther.content = (-~[]+([]+[])+(-~[]<<!![]<<!![]-~[])+-~[]+-~[]+(!![]<<!![])+-[]+(!![]<<-~[]-~[]+!![])+(!![]-~[])*(!![]+!![]+!![])+(!![]-~[])+(!![]-~[])*(-~[]<<!![])-[])[([]/[]+{})[-~[]<<-~[]-~[]-~[]-~[]]+([]/[]+{})[-~[]<<-~[]<<!![]]+(([]+[])[([]+{})[(-~[]<<-~[]<<-~[])-~[]]+([]+{})[-~[]]+([][{}]+{})[-~[]]+(![]+{})[(-~[]<<-~[])-~[]]+(!![]+{})[-[]]+(!![]+{})[-~[]]+([][{}]+{})[-[]]+([]+{})[(-~[])+(-~[]+!![]+{})[-[]]]+((~[])/(-![])+{})[(-~[]+!![])+(-~[]+{})[-[]]]+([][{}]+{})[-~[]+(-[]+{})[-[]]]+(([]==-[])+{})[-~[]]]+{})[([]+{}+!![]+([]===[]))[(-~[]-~[])+(-~[]-~[]+{})[-[]]]+(([])[!![]]+{})[-[]]+([]/[]+{})[-~[]+(!![]+!![]+{})[-[]]]+(!![]+{}+![])[-~[]-~[]+(!![]-~[]+{})[-[]]]+(([{}]!==[])+{})[~[]-~[]]+(([{}]!==[])+{})[[]-~[]]]((-~[]<<-~[]-~[]-~[])-~[],(!![]+!![])*(-~[]-~[]-~[]))]((((-~[]+!![])<<!![])+~[])*(-~[]+((([]!==[])-[])-~[]+([]+[]))));
-    </script>
-</head>
-<body>
-    <header>
-        <div id="top">
-            <a href="/"><h1>Tychlog</h1></a>
-            <nav>
-                <a href="/technology.html">Tech</a>
-                <a href="/work.html">Work</a>
-                <a href="/read.html">Read</a>
-                <a href="/archive.html">Archive</a>
-                <a href="/about.html">About</a>
-                <a href="/feed.xml">Feed</a>
-            </nav>
-            <a id="list"></a>
-        </div>
-    </header>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+
     <main>{{ content }}
         <aside>
         </aside>
     </main>
-    <footer>
-        <a href="#" id="backtop">&#94;</a>
-        <address>
-            <p>
-                <span>&copy;2013</span>
-                <span>Designed by Tychio</span>
-                <span>|</span>
-                <span>Powered by <a href="http://jekyllrb.com/">Jekyll</a></span>
-            </p>
-            <p>
-                <a href="https://coderwall.com/tychio"><img alt="Endorse Tychio on Coderwall" src="https://api.coderwall.com/tychio/endorsecount.png" /></a>
-                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a>
-            </p>
-        </address>    
-    </footer>
-    
-    <!-- <script type="text/javascript" src="/js/annyang.js"></script> -->
+
+    {% include footer.html %}
     <script type="text/javascript" src="/js/blog.js"></script>
-</body>
+  </body>
+
 </html>
