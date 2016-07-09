@@ -100,3 +100,31 @@ main dl dd article.excerpt img{display:block;float:none;max-width:260px;width:26
 footer{bottom:60px;height:60px;font-size:.7rem;}
 footer a#backtop{min-width:30px}
 }
+
+#logo {
+    position: relative;
+    overflow: visible;
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+
+#logo .logo-patial {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+#logo .logo-patial.logo-left {
+    transform: rotate(120deg);
+}
+
+#logo .logo-patial.logo-right {
+    transform: rotate(-120deg);
+}
+#logo .logo-patial:after {
+    content: 'Z';
+    font-family: aftommy;
+    font-size: 2em;
+    color: #a03030;
+}
