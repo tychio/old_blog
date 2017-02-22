@@ -16,7 +16,7 @@ github_username:  tychio
 
 # Build settings
 lsi:         false
-highlighter: pygments
+highlighter: rouge
 markdown: kramdown
 permalink:   date
 excerpt_separator: <!-- more -->
