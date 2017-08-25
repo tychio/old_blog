@@ -3,3 +3,4 @@ _import
 .DS_Store
 Gemfile.lock
 node_modules
+.sass_cache
