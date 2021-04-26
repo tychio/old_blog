@@ -1,0 +1,10 @@
+version: '3'
+services:
+  jekyll:
+    image: jekyll/jekyll:latest
+    container_name: jekyll
+    command: rm -rf jekyll && cp -r dist jekyll && cd jekyll && jekyll build --watch --incremental && jekyll serve
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./dist:/srv/dist

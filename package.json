@@ -1,9 +1,43 @@
 {
-    "name": "TychioBlog",
+    "name": "blog",
     "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "cd ./dist && jekyll serve",
+        "build": "vue-cli-service build && npm run jekyll",
+        "jekyll": "docker run --rm --volume=\"$PWD/dist:/srv/jekyll\" -it jekyll/jekyll:latest jekyll build --incremental",
+        "lint": "vue-cli-service lint"
+    },
+    "dependencies": {
+        "core-js": "^3.6.5",
+        "vue": "^3.0.0"
+    },
     "devDependencies": {
-        "grunt": "*",
-        "grunt-contrib-stylus": "*",
-        "grunt-contrib-watch": "*"
-    }
+        "@vue/cli-plugin-babel": "~4.5.0",
+        "@vue/cli-plugin-eslint": "~4.5.0",
+        "@vue/cli-service": "~4.5.0",
+        "@vue/compiler-sfc": "^3.0.0",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^6.7.2",
+        "eslint-plugin-vue": "^7.0.0"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/vue3-essential",
+            "eslint:recommended"
+        ],
+        "parserOptions": {
+            "parser": "babel-eslint"
+        },
+        "rules": {}
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead"
+    ]
 }
